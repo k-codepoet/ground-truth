@@ -1,0 +1,52 @@
+# Decision Schema
+# 설계 결정 컨텐츠의 필수/선택 필드 정의
+
+required_fields:
+  - id             # 고유 식별자 (파일명과 동일)
+  - title          # 결정 제목
+  - description    # 한 줄 설명
+  - considerations # 결정 시 고려사항 (배열)
+  - options        # 선택지 (객체 배열)
+
+optional_fields:
+  - caseStudies  # 관련 사례 연구 (배열)
+  - demos        # 관련 데모 (배열)
+  - references   # 참고 자료 (배열)
+  - exportable   # Export 설정
+
+example:
+  ---
+  id: sync-strategy
+  title: 동기화 전략
+  description: 낙관적 vs 비관적, 롤백
+  
+  considerations:
+    - 게임 템포
+    - 허용 가능한 지연시간
+    - 복잡도 예산
+    
+  options:
+    - id: lockstep
+      name: 락스텝
+      pros:
+        - 완벽한 동기화
+        - 대역폭 효율
+      cons:
+        - 입력 지연
+        - 결정론 필수
+      useCases:
+        - RTS
+        - 턴제 게임
+        
+    - id: rollback
+      name: 롤백
+      pros:
+        - 즉각적 반응
+        - 좋은 UX
+      cons:
+        - 복잡한 구현
+        - 상태 저장 오버헤드
+      useCases:
+        - 격투 게임
+        - 액션 게임
+  ---

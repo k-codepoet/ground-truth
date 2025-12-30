@@ -1,0 +1,150 @@
+# Game Development - Layer Structure
+# 3계층 지식 구조의 상세 정의
+
+# Layer 1: Cases (사례 연구)
+cases:
+  title: 사례로 배우기
+  description: 실제 게임들이 어떻게 구현했는지
+  color: blue
+  icon: Trophy
+  
+  items:
+    - id: super-mario
+      title: 슈퍼마리오
+      description: 플랫포머의 정석, 정밀한 물리와 타이밍
+      color: red
+      icon: Gamepad2
+      
+    - id: starcraft
+      title: 스타크래프트
+      description: RTS, 락스텝과 완벽한 동기화
+      color: indigo
+      icon: Rocket
+      demo: lockstep
+      
+    - id: overwatch
+      title: 오버워치
+      description: FPS, 클라이언트 예측과 서버 권한
+      color: amber
+      icon: Crosshair
+      
+    - id: lol
+      title: 리그 오브 레전드
+      description: MOBA, 결정론적 시뮬레이션
+      color: cyan
+      icon: Swords
+      
+    - id: pubg
+      title: 배틀그라운드
+      description: 배틀로얄, 대규모 맵과 100인 동기화
+      color: yellow
+      icon: Target
+      
+    - id: maplestory
+      title: 메이플스토리
+      description: 2D MMORPG, 대규모 동시접속 처리
+      color: orange
+      icon: TreePine
+      
+    - id: candy-crush
+      title: 캔디크러쉬
+      description: 3매치 퍼즐, 연쇄 반응 처리
+      color: pink
+      icon: Candy
+      demo: candy-crush
+      
+    - id: fortnite
+      title: 포트나이트
+      description: 배틀로얄, Replication Graph와 대규모 동기화
+      color: purple
+      icon: Building
+      
+    - id: counter-strike
+      title: 카운터스트라이크
+      description: 경쟁 FPS, 정밀한 히트 판정과 틱레이트
+      color: teal
+      icon: Bomb
+
+# Layer 2: Fundamentals (기본 원리)
+fundamentals:
+  title: 기본 원리
+  description: 게임 장르 무관하게 항상 필요한 불변 법칙
+  color: green
+  icon: Blocks
+  
+  items:
+    - id: modeling-simulation
+      title: 모델링 & 시뮬레이션
+      description: 게임 세계의 상태 정의와 업데이트
+      color: blue
+      icon: Box
+      
+    - id: game-loop
+      title: 게임 루프
+      description: 게임의 심장박동
+      color: red
+      icon: RefreshCw
+      
+    - id: serialization
+      title: 직렬화 & 상태관리
+      description: 데이터 저장, 전송, 복원
+      color: teal
+      icon: Database
+      demo: serialization
+      
+    - id: networking
+      title: 네트워크 통신 기초
+      description: TCP/UDP, 패킷, 지연시간
+      color: cyan
+      icon: Network
+      
+    - id: physics
+      title: 물리 연산
+      description: 충돌, 중력, 힘의 계산
+      color: orange
+      icon: Orbit
+      
+    - id: rendering
+      title: 렌더링 & 시각화
+      description: 게임 상태를 화면에 표현
+      color: purple
+      icon: Monitor
+
+# Layer 3: Decisions (설계 결정)
+decisions:
+  title: 설계 결정
+  description: 게임 특성에 따라 달라지는 트레이드오프
+  color: orange
+  icon: GitBranch
+  
+  items:
+    - id: multiplayer-arch
+      title: 멀티플레이 아키텍처
+      description: P2P vs Client-Server, 권한 모델
+      color: blue
+      icon: Users
+      
+    - id: physics-authority
+      title: 물리 처리 방식
+      description: 서버 vs 클라이언트 물리 연산
+      color: red
+      icon: Server
+      
+    - id: sync-strategy
+      title: 동기화 전략
+      description: 낙관적 vs 비관적, 롤백
+      color: purple
+      icon: RefreshCw
+      demo: lockstep
+      
+    - id: tickrate
+      title: 틱레이트 & 보간
+      description: 서버 업데이트 주기와 클라이언트 보간
+      color: teal
+      icon: Timer
+      
+    - id: balancing
+      title: 밸런싱 구조
+      description: 데이터 드리븐 밸런싱 설계
+      color: yellow
+      icon: Scale

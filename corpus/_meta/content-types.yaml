@@ -1,0 +1,94 @@
+# Content Type Definitions
+# 지식 콘텐츠의 유형 정의
+
+content_types:
+  # Layer 1: 사례 연구 (Case Studies)
+  - id: case
+    name: Case Study
+    emoji: 🏆
+    description: 실제 사례 분석, 구체적인 구현 방법
+    purpose: 구체적 사례, 재현 가능한 경험
+    audience: 나, 동료, 학습자
+    template: case.mdx
+    required_fields:
+      - title
+      - description
+      - context
+      - problem
+      - solution
+    optional_fields:
+      - year
+      - genre
+      - keyFeatures
+      - metrics
+      - references
+
+  # Layer 2: 기본 원리 (Fundamentals)
+  - id: fundamental
+    name: Fundamental
+    emoji: 📚
+    description: 추상화된 원칙, 패턴, 불변의 진리
+    purpose: 시간이 지나도 변하지 않는 핵심 원리
+    audience: 미래의 나, AI Agent, 학습자
+    template: fundamental.mdx
+    required_fields:
+      - title
+      - description
+      - concepts
+    optional_fields:
+      - usedIn
+      - examples
+      - references
+
+  # Layer 3: 설계 결정 (Design Decisions)
+  - id: decision
+    name: Design Decision
+    emoji: 🔀
+    description: 트레이드오프, 선택의 이유
+    purpose: 왜 이 선택을 했는지 기록
+    audience: 미래의 나
+    template: decision.mdx
+    required_fields:
+      - title
+      - description
+      - considerations
+      - options
+    optional_fields:
+      - caseStudies
+      - references
+
+  # Interactive Demo
+  - id: demo
+    name: Interactive Demo
+    emoji: 🎮
+    description: 인터랙티브 시각화/체험
+    purpose: 개념을 직접 체험할 수 있는 데모
+    audience: 학습자, 외부 독자
+    template: demo.yaml
+    required_fields:
+      - title
+      - description
+      - type
+      - interface
+    optional_fields:
+      - related
+      - implementation
+
+# Structure Types for Topics
+structure_types:
+  - id: layered
+    name: Layered (3-Layer)
+    description: Cases → Fundamentals → Decisions 3계층 구조
+    layers: [cases, fundamentals, decisions]
+    
+  - id: tree
+    name: Tree
+    description: 계층적 트리 구조
+    
+  - id: flat
+    name: Flat
+    description: 평면적 문서 목록
+    
+  - id: graph
+    name: Graph
+    description: 자유로운 그래프 연결 구조

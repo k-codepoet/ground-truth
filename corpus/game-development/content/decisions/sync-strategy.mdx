@@ -1,0 +1,126 @@
+---
+id: sync-strategy
+title: 동기화 전략
+description: 낙관적 vs 비관적, 롤백
+
+considerations:
+  - 게임 템포
+  - 허용 가능한 지연시간
+  - 복잡도 예산
+
+options:
+  - id: lockstep
+    name: 락스텝
+    pros:
+      - 완벽한 동기화
+      - 대역폭 효율
+      - 리플레이 시스템 용이
+    cons:
+      - 입력 지연
+      - 결정론 필수
+      - 재연결 어려움
+    useCases:
+      - RTS
+      - 턴제 게임
+      
+  - id: rollback
+    name: 롤백
+    pros:
+      - 즉각적 피드백
+      - 좋은 UX
+    cons:
+      - 복잡한 구현
+      - 상태 저장 오버헤드
+    useCases:
+      - 격투 게임
+      - 액션 게임
+
+demos:
+  - lockstep
+
+exportable:
+  web: true
+  blog: true
+  resume: false
+---
+
+# 동기화 전략
+
+멀티플레이어 게임에서 어떻게 모든 플레이어가 같은 게임 상태를 볼 수 있게 할 것인가?
+
+## 고려사항
+
+| 요소 | 설명 |
+|------|------|
+| 게임 템포 | 빠른 액션 vs 느린 전략 |
+| 허용 지연시간 | 몇 ms까지 허용 가능한가 |
+| 복잡도 예산 | 구현/유지보수 비용 |
+
+## 선택지
+
+### 1. 락스텝 (Lockstep)
+
+모든 클라이언트가 동일한 틱에 동일한 입력을 처리하여 동일한 결과를 계산.
+
+**장점:**
+- 완벽한 동기화 보장
+- 대역폭 효율 (입력만 전송)
+- 리플레이 시스템 구현 용이
+
+**단점:**
+- 입력 지연 (모든 플레이어 입력 대기)
+- 결정론적 시뮬레이션 필수
+- 재연결 어려움
+
+**사용 사례:** 스타크래프트, 에이지 오브 엠파이어, LoL
+
+### 2. 롤백 (Rollback)
+
+클라이언트가 예측 실행 후, 서버 응답 시 필요하면 상태를 되감고 재실행.
+
+**장점:**
+- 즉각적인 피드백
+- 좋은 사용자 경험
+
+**단점:**
+- 복잡한 구현
+- 상태 저장/복원 오버헤드
+
+**사용 사례:** 스트리트 파이터, 철권 8, GGPO
+
+### 3. 상태 동기화 (State Sync)
+
+서버가 권위 있는 상태를 주기적으로 브로드캐스트.
+
+**장점:**
+- 구현 단순
+- 서버 권한으로 치트 방지
+
+**단점:**
+- 대역폭 사용량 높음
+- 입력 지연
+
+**사용 사례:** 배틀그라운드, 포트나이트
+
+## 의사결정 사례
+
+### 철권 7 → 철권 8: 지연 기반에서 롤백으로
+
+**문제:** 철권 7의 지연 기반 넷코드는 5-20프레임의 입력 지연을 발생시켜 온라인 대전의 반응성이 크게 떨어졌습니다.
+
+**결정:** 철권 8에서 롤백 넷코드로 전환.
+
+**결과:** 로컬 입력 반응성 대폭 개선. 크로스플랫폼 대전 지원.
+
+### 왜 스타크래프트는 락스텝을 유지할까?
+
+**이유:**
+1. 수백 유닛 상태 롤백 비용이 너무 높음
+2. RTS는 프레임 단위 정밀 입력이 덜 필요
+3. 리플레이 시스템이 락스텝에 의존
+
+## 참고 자료
+
+- [Netcode Concepts Part 3: Lockstep and Rollback](https://meseta.medium.com/netcode-concepts-part-3-lockstep-and-rollback-f70e9297271)
+- [GGPO - Wikipedia](https://en.wikipedia.org/wiki/GGPO)
+- [Client-Side Prediction and Server Reconciliation](https://www.gabrielgambetta.com/client-side-prediction-server-reconciliation.html)

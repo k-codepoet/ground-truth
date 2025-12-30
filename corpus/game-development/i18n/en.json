@@ -1,0 +1,106 @@
+{
+  "topic": {
+    "title": "Structure of Game Development",
+    "description": "Understanding Game Development in 3 Layers"
+  },
+  "layers": {
+    "cases": {
+      "title": "Learn from Cases",
+      "description": "How real games were implemented"
+    },
+    "fundamentals": {
+      "title": "Fundamentals",
+      "description": "Timeless principles applicable to all game genres"
+    },
+    "decisions": {
+      "title": "Design Decisions",
+      "description": "Trade-offs that vary by game characteristics"
+    }
+  },
+  "cases": {
+    "starcraft": {
+      "title": "StarCraft",
+      "description": "RTS, Lockstep and Perfect Synchronization"
+    },
+    "overwatch": {
+      "title": "Overwatch",
+      "description": "FPS, Client Prediction and Server Authority"
+    },
+    "lol": {
+      "title": "League of Legends",
+      "description": "MOBA, Deterministic Simulation"
+    },
+    "super-mario": {
+      "title": "Super Mario",
+      "description": "The quintessential platformer, precise physics and timing"
+    },
+    "pubg": {
+      "title": "PUBG",
+      "description": "Battle Royale, Large maps and 100-player sync"
+    },
+    "fortnite": {
+      "title": "Fortnite",
+      "description": "Battle Royale, Replication Graph and massive sync"
+    },
+    "counter-strike": {
+      "title": "Counter-Strike",
+      "description": "Competitive FPS, precise hit detection and tickrate"
+    }
+  },
+  "fundamentals": {
+    "game-loop": {
+      "title": "Game Loop",
+      "description": "The heartbeat of a game"
+    },
+    "networking": {
+      "title": "Network Basics",
+      "description": "TCP/UDP, packets, latency"
+    },
+    "physics": {
+      "title": "Physics",
+      "description": "Collision, gravity, forces"
+    },
+    "serialization": {
+      "title": "Serialization & State",
+      "description": "Data storage, transmission, restoration"
+    },
+    "modeling-simulation": {
+      "title": "Modeling & Simulation",
+      "description": "Defining and updating game world state"
+    }
+  },
+  "decisions": {
+    "sync-strategy": {
+      "title": "Synchronization Strategy",
+      "description": "Optimistic vs Pessimistic, Rollback"
+    },
+    "multiplayer-arch": {
+      "title": "Multiplayer Architecture",
+      "description": "P2P vs Client-Server, Authority Models"
+    },
+    "tickrate": {
+      "title": "Tickrate & Interpolation",
+      "description": "Server update frequency and client interpolation"
+    },
+    "physics-authority": {
+      "title": "Physics Authority",
+      "description": "Server vs Client physics processing"
+    }
+  },
+  "demos": {
+    "lockstep": {
+      "title": "Lockstep Sync Demo",
+      "description": "Experience StarCraft-style deterministic synchronization"
+    },
+    "mario-jump": {
+      "title": "Super Mario Jump Implementation",
+      "description": "Experience various jump mechanics with Phaser engine"
+    }
+  },
+  "ui": {
+    "backToHome": "Back",
+    "viewDemo": "View Demo",
+    "learnMore": "Learn More",
+    "references": "References"
+  }
+}

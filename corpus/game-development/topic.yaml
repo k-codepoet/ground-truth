@@ -1,0 +1,73 @@
+# Topic: Game Development
+# 게임 개발의 구조 - 3계층으로 이해하는 게임 개발
+
+id: game-development
+title: 게임 개발의 구조
+description: 3계층으로 이해하는 게임 개발
+
+# 분류
+domain: engineering
+tags:
+  - game
+  - realtime
+  - networking
+  - physics
+  - multiplayer
+  - simulation
+
+# 지식 구조 타입
+structure_type: layered  # layered | tree | flat | graph
+
+# 계층 정의 (layered 구조용)
+layers:
+  - id: cases
+    title: 사례로 배우기
+    description: 실제 게임들이 어떻게 구현했는지
+    color: blue
+    icon: Trophy
+    content_type: case
+    
+  - id: fundamentals
+    title: 기본 원리
+    description: 게임 장르 무관하게 항상 필요한 불변 법칙
+    color: green
+    icon: Blocks
+    content_type: fundamental
+    
+  - id: decisions
+    title: 설계 결정
+    description: 게임 특성에 따라 달라지는 트레이드오프
+    color: orange
+    icon: GitBranch
+    content_type: decision
+
+# 출력 설정
+outputs:
+  - type: web-interactive
+    template: mindmap-course
+    enabled: true
+    config:
+      demos: true
+      i18n: true
+      theme: dark
+      
+  - type: docs
+    template: docusaurus
+    enabled: true
+    
+  - type: blog
+    template: series
+    enabled: true
+    config:
+      series_name: "게임 개발의 구조"
+      
+# 메타데이터
+status: active
+created: 2025-01-01
+updated: 2025-01-30
+author: choigawoon
+
+# 관련 주제
+related_topics:
+  - devops
+  - ai-engineering
