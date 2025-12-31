@@ -9,11 +9,11 @@
 ## 핵심 개념
 
 ```
-inbox/ → /gemify:develop → /gemify:file → LIBRARY
- 원석        drafts           library
+/gemify:inbox → /gemify:draft → /gemify:library
+    inbox/         drafts/         library/
 ```
 
-inbox의 원석이 develop에서 **탐색 → 연마 → 응축**되어 밀도 있는 지식이 됨.
+원석이 **탐색 → 연마 → 응축**되어 밀도 있는 지식이 됨.
 
 ---
 
@@ -41,9 +41,9 @@ inbox의 원석이 develop에서 **탐색 → 연마 → 응축**되어 밀도 �
 
 | 명령어 | 설명 | 저장 위치 |
 |--------|------|----------|
-| `/gemify:capture` | 내 생각 포착 | inbox/thoughts/ |
-| `/gemify:develop` | 원석 다듬기 (대화로 확장) | drafts/ |
-| `/gemify:file` | 보석 정리 (library로) | library/ |
+| `/gemify:inbox` | 내 생각 포착 | inbox/thoughts/ |
+| `/gemify:draft` | 원석 다듬기 (대화로 확장) | drafts/ |
+| `/gemify:library` | 보석 정리 (library로) | library/ |
 
 ---
 
@@ -55,9 +55,13 @@ inbox의 원석이 develop에서 **탐색 → 연마 → 응축**되어 밀도 �
 
 ---
 
-## 다음 단계
+## 로드맵
 
-Stage 0 검증 완료 후:
-- Stage 1: CLAUDE.md 추가 (AI 보조) ✅
-- Stage 2: 자동 분류 스크립트
-- Stage 3: Export 파이프라인
+상세 계획: [docs/humans/knowledge-ops/brainstorm/](./docs/humans/knowledge-ops/brainstorm/)
+
+| Stage | 목표 | 상태 |
+|-------|------|------|
+| 0 | 수동 검증 (5개 문서 파이프라인 통과) | 진행중 |
+| 1 | AI 보조 (CLAUDE.md, Claude Code) | ✅ |
+| 2 | 자동 분류 스크립트 | 예정 |
+| 3 | Export 파이프라인 | 예정 |

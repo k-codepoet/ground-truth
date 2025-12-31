@@ -7,8 +7,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Ground Truth는 개인 지식 파이프라인 시스템입니다. 머릿속 암묵지를 구조화된 지식(library)으로 변환합니다.
 
 ```
-inbox/ → /gemify:develop → /gemify:file → LIBRARY
- 원석        drafts           library
+/gemify:inbox → /gemify:draft → /gemify:library
+    inbox/         drafts/         library/
 ```
 
 **핵심**: 원석을 다듬어 보석으로. 생각을 포착하고, 다듬고, 정리합니다.
@@ -19,26 +19,26 @@ inbox/ → /gemify:develop → /gemify:file → LIBRARY
 
 | 명령어 | 설명 | 저장 위치 |
 |--------|------|----------|
-| `/gemify:capture [내용]` | 내 생각 포착 | inbox/thoughts/ |
-| `/gemify:develop [파일/아이디어]` | 원석 다듬기 (대화로 확장) | drafts/ |
-| `/gemify:file [파일]` | 보석 정리 (library로) | library/ |
+| `/gemify:inbox [내용]` | 내 생각 포착 | inbox/thoughts/ |
+| `/gemify:draft [파일/아이디어]` | 원석 다듬기 (대화로 확장) | drafts/ |
+| `/gemify:library [파일]` | 보석 정리 (library로) | library/ |
 
 ```bash
-/gemify:capture                      # 직전 대화 내용 저장
-/gemify:capture 이런 생각이 들었어     # 입력 내용 저장
-/gemify:develop                      # drafts 목록 또는 새 시작
-/gemify:develop "새로운 아이디어"      # 새 원석으로 시작
-/gemify:develop drafts/my-idea.md    # 기존 이어가기
-/gemify:file                         # drafts 목록에서 선택
-/gemify:file drafts/my-idea.md       # 특정 파일 처리
+/gemify:inbox                        # 직전 대화 내용 저장
+/gemify:inbox 이런 생각이 들었어       # 입력 내용 저장
+/gemify:draft                        # drafts 목록 또는 새 시작
+/gemify:draft "새로운 아이디어"        # 새 원석으로 시작
+/gemify:draft drafts/my-idea.md      # 기존 이어가기
+/gemify:library                      # drafts 목록에서 선택
+/gemify:library drafts/my-idea.md    # 특정 파일 처리
 ```
 
-## /gemify:develop 대화 모드
+## /gemify:draft 대화 모드
 
 ```
-/gemify:develop
+/gemify:draft
 ├── facet  - 여러 면 탐색, 넓게 (기본)
-└── polish - 깊이 연마 → file 준비
+└── polish - 깊이 연마 → library 준비
 ```
 
 - **facet**: 넓게 탐색 ("다른 면에서 보면?", "연결되는 건?")
@@ -106,7 +106,4 @@ inbox 파일 사용 시:
 
 ## 세션 시작 시
 
-세션 시작 시 자동으로:
-- `drafts/`에서 `status: developing` 파일 확인
-- `inbox/thoughts/`에서 `status: raw` 파일 확인
-- 진행 중인 작업이 있으면 안내
+SessionStart hook으로 자동 실행됨 (`.claude/settings.json` 참조)
