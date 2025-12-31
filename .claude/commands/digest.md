@@ -8,7 +8,7 @@ arguments:
 
 # /digest - 지식 소화 커맨드
 
-knowledge-digest 스킬을 사용하여 growing 파일을 corpus로 처리한다.
+digest 스킬을 사용하여 growing 파일을 corpus로 처리한다.
 
 ## 사용법
 
@@ -27,5 +27,5 @@ seed/ + materials/ → growing/ → [/digest] → corpus/
 
 1. $ARGUMENTS가 있으면 해당 파일 처리
 2. 없으면 growing 폴더의 파일 목록 표시 후 선택 요청
-3. knowledge-digest 스킬의 워크플로우 실행
+3. digest 스킬의 워크플로우 실행
 4. 완료 후 growing 파일 status를 `digested`로 변경

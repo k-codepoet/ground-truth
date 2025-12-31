@@ -1,63 +1,50 @@
 ---
 name: seed
-description: 씨앗 아이디어를 빠르게 저장. "이거 저장해", "메모해", "seed", "씨앗 심어" 등 요청 시 활성화. /grow로 키울 수 있는 raw 상태로 저장.
+description: 사용자의 생각을 seed/에 빠르게 저장. "저장해", "메모해", "seed", "씨앗" 등 요청 시 활성화. raw 상태로 저장하여 /grow로 확장 가능.
 license: MIT
+compatibility: 이 프로젝트의 seed/, materials/, growing/, corpus/ 구조 필요
 metadata:
   author: choigawoon
-  version: "0.1"
-allowed-tools: Write
+  version: "0.2"
+allowed-tools: Read Write Edit
 ---
 
-# Seed Skill - 씨앗 아이디어 저장
-
-## Overview
+# Seed Skill
 
 사용자의 생각을 **씨앗 상태로 빠르게 저장**합니다.
-정돈은 하되, 과하게 다듬지 않습니다.
-나중에 `/grow`로 키울 수 있는 raw 상태를 유지합니다.
-
-## 자동 활성화 조건
-
-- "이거 저장해", "메모해", "inbox에 넣어"
-- "기록해", "남겨", "캡처해"
-- "seed", "씨앗", "씨앗 심어"
-- 생각을 쏟아내는 대화
 
 ## 동작
 
-1. 사용자가 말한 내용을 파악
-2. 최소한의 정돈 (마크다운 형식)
+1. 사용자가 말한 내용 파악
+2. 최소한의 정돈 (마크다운)
 3. `seed/{date}-{slug}.md`로 저장
-4. 저장 완료 알림
-5. "/grow로 키울 수 있어요" 안내
+4. "/grow로 키울 수 있어요" 안내
 
 ## 파일 형식
 
 ```markdown
-# {제목 - 내용에서 추출}
+# {제목}
 
 > 날짜: YYYY-MM-DD
-> 참조: (materials 파일 경로, 없으면 생략)
+> 참조: (materials 경로, 없으면 생략)
+> status: raw
+> used_in: (growing 경로, 사용 후 기록)
 
 ---
 
-{사용자가 말한 내용 - 최소한의 정돈}
+{내용}
 ```
 
 ## seed vs materials
 
-- **seed/**: 내 생각의 씨앗 (이 스킬이 저장하는 곳)
-- **materials/**: 외부 재료 (기사, 문서, 대화 등) - /import로 저장 (나중에)
-
-seed는 materials를 참조할 수 있음:
-```markdown
-> 참조: materials/2025-12-31-some-article.md
-```
+| 폴더 | 용도 | 명령어 |
+|------|------|--------|
+| seed/ | 내 생각의 씨앗 | /seed |
+| materials/ | 외부 재료 | /import (예정) |
 
 ## 규칙
 
-- **과하게 다듬지 않는다** - raw 상태 유지
-- 제목은 내용에서 핵심 키워드 추출
+- **과하게 다듬지 않음** - raw 상태 유지
+- 제목은 핵심 키워드 추출
 - slug는 영문 kebab-case
-- 저장 후 바로 알림
-- `/grow`로 확장 가능함을 안내
+- 저장 후 `/grow` 안내

@@ -53,5 +53,5 @@ growing/   ← 둘이 만나서 해체 → 재조립 → 응축
 
 ```
 사용자: "digest 해줘" 또는 "정리하자"
-→ Claude: growing/ 내용을 inbox로 복사 후 /digest 워크플로우 호출
+→ Claude: /digest 워크플로우 호출 (growing → corpus 직접 처리)
 ```
