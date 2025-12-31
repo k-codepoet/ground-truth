@@ -79,7 +79,7 @@ domain: {Q5 답변}
 
 사용자 컨펌 후:
 1. `corpus/{domain}/{slug}.md`로 저장
-2. 원본 inbox 파일 삭제 여부 확인
+2. 원본 inbox 파일을 `inbox_archived/`로 이동
 3. 완료 보고
 
 ## 규칙
