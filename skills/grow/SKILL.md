@@ -101,9 +101,9 @@ status: growing
 ### 4. digest 전환
 
 사용자가 수락하면:
-1. growing/{slug}.md의 Current State를 기반으로 inbox 파일 생성
-2. /digest 워크플로우 호출
-3. 완료 후 growing 파일 status를 `digested`로 변경
+1. /digest 워크플로우 호출 (growing 파일에서 바로 처리)
+2. 완료 후 growing 파일 status를 `digested`로 변경
+3. corpus/{domain}/{slug}.md에 저장
 
 ## 세션 동작
 
