@@ -1,5 +1,5 @@
 ---
-description: seed와 materials를 합쳐 대화로 확장 (expand/brew/brainstorm 통합)
+description: seed와 materials를 합쳐 대화로 확장 (branch/ripen 모드)
 arguments:
   - name: input
     description: seed 파일, materials 파일, growing 파일, 또는 새 아이디어
@@ -35,13 +35,24 @@ growing/   ← 둘이 만나서 해체 → 재조립 → 응축
 2. 따옴표로 감싼 문자열이면 → 새 씨앗으로 growing/ 파일 생성 후 대화 시작
 3. 파일 경로면 → 해당 파일 읽고 이어가기 (seed/, materials/, growing/ 모두 가능)
 
-## 세 가지 모드 (자동 전환)
+## 두 가지 모드
 
-대화 흐름에 따라 Claude가 자연스럽게 모드 전환:
+```
+/grow
+├── branch - 가지치기, 넓게 뻗기 (기본)
+└── ripen  - 익히기, 응축 → digest 준비
+```
 
-- **expand**: 아이디어를 넓히는 데 집중 ("연결되는 건?", "더 큰 그림에서?")
-- **brew**: 아이디어를 깊이 숙성 ("왜 이게 중요해?", "핵심이 뭐야?")
-- **brainstorm**: 제약 없이 자유롭게 ("미친 아이디어라면?", "반대로 하면?")
+- **branch**: 넓게 탐색 ("연결되는 건?", "다른 관점에서?")
+- **ripen**: 깊이 응축 ("왜 중요해?", "핵심만 남기면?")
+
+**ripen 트리거:** "익혀봐", "좀 더 익히자", "핵심이 뭐야"
+
+## revision (스냅샷)
+
+방향 전환(pivot) 시 자동으로 스냅샷 생성:
+- `.history/{slug}/` 폴더에 저장
+- frontmatter의 `history` 배열에 기록
 
 ## 종료 조건
 

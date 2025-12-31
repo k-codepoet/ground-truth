@@ -1,11 +1,11 @@
 ---
 name: grow
-description: seed와 materials를 대화로 확장하여 growing/에 기록. "확장해줘", "brainstorm", "키워봐" 등 요청 시 활성화. 익으면 /digest 전환 제안.
+description: seed와 materials를 대화로 확장하여 growing/에 기록. branch(넓게)/ripen(익히기) 모드로 동작. 익으면 /digest 전환 제안.
 license: MIT
 compatibility: 이 프로젝트의 seed/, materials/, growing/, corpus/ 구조 필요
 metadata:
   author: choigawoon
-  version: "0.3"
+  version: "0.4"
 allowed-tools: Read Write Edit
 ---
 
@@ -21,6 +21,34 @@ materials/ ← 외부 재료
     ↓
 growing/   ← 해체 → 재조립 → 응축
 ```
+
+## 두 가지 모드
+
+```
+/grow
+├── branch - 가지치기, 넓게 뻗기 (BFS)
+└── ripen  - 익히기, 응축 (DFS) → digest 준비
+```
+
+### branch (기본)
+
+넓게 탐색하고 연결점을 찾는 모드.
+
+**질문 스타일:**
+- "연결되는 건?"
+- "다른 관점에서 보면?"
+- "비슷한 사례가 있어?"
+
+### ripen
+
+깊이 파고들어 핵심을 응축하는 모드.
+
+**트리거:** "익혀봐", "좀 더 익히자", "핵심이 뭐야"
+
+**질문 스타일:**
+- "왜 이게 중요해?"
+- "한 문장으로 줄이면?"
+- "진짜 핵심만 남기면?"
 
 ## 핵심 행동
 
@@ -40,7 +68,16 @@ seed/materials 사용 시:
 - 해당 파일 `status` → `used`
 - 해당 파일 `used_in` → growing 경로 기록
 
-### 4. 성숙도 감지
+### 4. revision (스냅샷)
+
+**pivot(방향 전환) 시 revision 증가:**
+- branch 중 → 다른 방향 branch
+- branch → ripen 전환
+- ripen 중 → 다른 방향 ripen
+
+스냅샷은 `.history/{slug}/` 폴더에 저장.
+
+### 5. 성숙도 감지
 
 다음 조건 시 digest 전환 제안:
 - turns >= 5
@@ -49,31 +86,21 @@ seed/materials 사용 시:
 
 ## 파일 형식 (growing/)
 
-growing 파일은 이미 YAML frontmatter 형식 사용:
-
 ```markdown
 ---
 title: "{제목}"
 created: "YYYY-MM-DD"
 updated: "YYYY-MM-DD HH:MM"
 turns: 0
+revision: 1
 status: growing
 sources: []
----
-
-## Seed
-{최초 아이디어}
-
----
-
-## Sources
-<!-- 사용된 seed/materials 파일 목록 -->
-
----
-
-## Growth Log
-<!-- 세션별 대화 기록 -->
-
+history:
+  - rev: 1
+    mode: branch
+    date: YYYY-MM-DD
+    summary: "요약"
+    file: .history/{slug}/01-branch-YYYY-MM-DD.md
 ---
 
 ## Current State
@@ -85,12 +112,39 @@ sources: []
 - [ ]
 ```
 
+## 히스토리 구조
+
+```
+growing/
+├── {slug}.md              # 현재 상태 (압축)
+└── .history/{slug}/
+    ├── 01-branch-2024-12-31.md
+    └── 02-ripen-2024-12-31.md
+```
+
+**스냅샷 파일 형식:**
+```markdown
+---
+session: 1
+mode: branch
+date: YYYY-MM-DD
+summary: "요약"
+---
+
+## 결정사항
+{확정된 것들}
+
+## 다음 작업
+- [ ] ...
+```
+
 ## 세션 동작
 
 | 시점 | 동작 |
 |------|------|
 | 시작 | growing/ 확인, 진행 중 목록 표시 |
-| 대화 | 매 턴 업데이트, turns 증가, 성숙도 체크 |
+| 대화 | 매 턴 업데이트, turns 증가, 모드 체크 |
+| pivot | revision++, 스냅샷 생성 |
 | 종료 | 상태 요약, "/grow {파일명}" 안내 |
 
 ## 규칙
