@@ -1,29 +1,29 @@
 ---
 title: "grow 스킬 모드 확장"
-created: "2024-12-31"
-updated: "2024-12-31 09:45"
+created: "2025-12-31"
+updated: "2025-12-31 09:45"
 turns: 3
 revision: 3
 status: set
 sources:
-  - inbox/thoughts/2024-12-31-grow-mode-expansion.md
-  - inbox/materials/2024-12-31-claude-md-review.md
+  - inbox/thoughts/2025-12-31-grow-mode-expansion.md
+  - inbox/materials/2025-12-31-claude-md-review.md
 history:
   - rev: 1
     mode: facet
-    date: 2024-12-31
+    date: 2025-12-31
     summary: "모드 구조 정리: BFS + DFS, progressive disclosure 히스토리"
-    file: .history/grow-mode-expansion/01-facet-2024-12-31.md
+    file: .history/grow-mode-expansion/01-facet-2025-12-31.md
   - rev: 2
     mode: facet
-    date: 2024-12-31
+    date: 2025-12-31
     summary: "revision 기준 정의: pivot(방향 전환) 시 스냅샷"
-    file: .history/grow-mode-expansion/02-facet-2024-12-31.md
+    file: .history/grow-mode-expansion/02-facet-2025-12-31.md
   - rev: 3
     mode: facet
-    date: 2024-12-31
+    date: 2025-12-31
     summary: "용어 확정: facet/polish (보석 메타포)"
-    file: .history/grow-mode-expansion/03-facet-2024-12-31.md
+    file: .history/grow-mode-expansion/03-facet-2025-12-31.md
 ---
 
 ## Current State

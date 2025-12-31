@@ -1,6 +1,6 @@
 ---
 title: "CLAUDE.md 리뷰 및 개선점"
-date: 2024-12-31
+date: 2025-12-31
 source: "직접 리뷰"
 type: document
 status: used

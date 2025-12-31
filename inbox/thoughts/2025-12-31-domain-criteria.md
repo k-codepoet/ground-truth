@@ -1,8 +1,8 @@
 ---
 title: "6대 domain 판단기준 정리"
-date: 2024-12-31
+date: 2025-12-31
 references:
-  - materials/2024-12-31-domain-selection-context.md
+  - materials/2025-12-31-domain-selection-context.md
 status: raw
 used_in:
 ---

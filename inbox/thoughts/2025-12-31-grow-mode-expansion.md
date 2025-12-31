@@ -1,8 +1,8 @@
 ---
 title: "grow 스킬 3가지 대화 모드 확장"
-date: 2024-12-31
+date: 2025-12-31
 references:
-  - materials/2024-12-31-claude-md-review.md
+  - materials/2025-12-31-claude-md-review.md
 status: used
 used_in: growing/grow-mode-expansion.md
 ---
