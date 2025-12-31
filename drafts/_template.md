@@ -4,7 +4,7 @@ created: "YYYY-MM-DD"
 updated: "YYYY-MM-DD HH:MM"
 turns: 0
 revision: 1
-status: cutting
+status: cutting|set
 sources: []
 history: []
 ---
