@@ -17,21 +17,43 @@ seed/ + materials/ → /grow → /digest → CORPUS
 
 | 명령어 | 설명 | 저장 위치 |
 |--------|------|----------|
-| `/seed` | 내 생각의 씨앗 저장 | seed/ |
-| `/grow` | seed + materials 대화로 확장 | growing/ |
-| `/digest` | 구조화하여 corpus로 | corpus/ |
+| `/seed [내용]` | 내 생각의 씨앗 저장 | seed/ |
+| `/grow [파일/아이디어]` | seed + materials 대화로 확장 | growing/ |
+| `/digest [파일]` | 구조화하여 corpus로 | corpus/ |
+
+```bash
+/seed                          # 직전 대화 내용 저장
+/seed 이런 생각이 들었어          # 입력 내용 저장
+/grow                          # growing 목록 또는 새 시작
+/grow "새로운 아이디어"           # 새 씨앗으로 시작
+/grow growing/my-idea.md       # 기존 이어가기
+/digest                        # growing 목록에서 선택
+/digest growing/my-idea.md     # 특정 파일 처리
+```
 
 ## /grow 대화 모드
 
-대화 흐름에 따라 자동 전환:
-- **expand**: 아이디어 확장 ("연결되는 건?", "더 큰 그림에서?")
-- **brew**: 깊이 숙성 ("왜 이게 중요해?", "핵심이 뭐야?")
-- **brainstorm**: 자유로운 발산 ("미친 아이디어라면?", "반대로 하면?")
+```
+/grow
+├── branch - 가지치기, 넓게 뻗기 (기본)
+└── ripen  - 익히기, 응축 → digest 준비
+```
+
+- **branch**: 넓게 탐색 ("연결되는 건?", "다른 관점에서?")
+- **ripen**: 깊이 응축 ("왜 중요해?", "핵심만 남기면?")
+
+**ripen 트리거**: "익혀봐", "좀 더 익히자", "핵심이 뭐야"
 
 **Digest 전환 조건** (제안만, 강요 안 함):
 - turns >= 5
 - Open Questions 대부분 해결
 - 같은 포인트 반복
+
+## revision (스냅샷)
+
+방향 전환(pivot) 시 자동 스냅샷:
+- `.history/{slug}/` 폴더에 저장
+- frontmatter `history` 배열에 기록
 
 ## 6대 Domain (corpus 분류)
 
@@ -60,7 +82,10 @@ seed/ + materials/ → /grow → /digest → CORPUS
 
 ## Session Start Behavior
 
-세션 시작 시 growing/(status: growing)과 seed/(raw) 확인 후 `/grow` 또는 `/digest` 안내.
+세션 시작 시:
+1. `growing/` 확인 → `status: growing` 파일 있으면 목록 표시
+2. `seed/` 확인 → `status: raw` 파일 있으면 언급
+3. 상황에 맞게 `/grow` 또는 `/digest` 안내
 
 ## 핵심 규칙
 
