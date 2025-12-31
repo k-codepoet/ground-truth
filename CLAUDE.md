@@ -94,3 +94,19 @@ inbox/ → /gemify:develop → /gemify:file → LIBRARY
 inbox 파일 사용 시:
 - 해당 파일의 `status` → `used`, `used_in` → drafts 경로
 - drafts 파일의 `sources` 배열에 추가
+
+## Frontmatter 필드
+
+| 폴더 | 필수 필드 |
+|------|----------|
+| inbox/thoughts/ | `title`, `date`, `status` (raw/used), `used_in` |
+| inbox/materials/ | `title`, `date`, `source`, `type`, `status` |
+| drafts/ | `title`, `created`, `updated`, `turns`, `status`, `sources` |
+| library/ | `title`, `domain` |
+
+## 세션 시작 시
+
+세션 시작 시 자동으로:
+- `drafts/`에서 `status: developing` 파일 확인
+- `inbox/thoughts/`에서 `status: raw` 파일 확인
+- 진행 중인 작업이 있으면 안내
