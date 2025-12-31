@@ -1,5 +1,5 @@
 ---
-description: 씨앗 아이디어를 inbox에 빠르게 저장
+description: 내 생각의 씨앗을 seed/에 빠르게 저장
 arguments:
   - name: content
     description: 저장할 내용 (없으면 직전 대화 내용 사용)
@@ -8,7 +8,7 @@ arguments:
 
 # /seed - 씨앗 저장
 
-seed 스킬을 사용하여 아이디어를 inbox에 저장한다.
+seed 스킬을 사용하여 내 생각의 씨앗을 seed/에 저장한다.
 
 ## 사용법
 
@@ -21,8 +21,13 @@ seed 스킬을 사용하여 아이디어를 inbox에 저장한다.
 
 1. $ARGUMENTS가 있으면 해당 내용 저장
 2. 없으면 직전 사용자 발화 내용 저장
-3. 최소한의 정돈 후 inbox에 저장
+3. 최소한의 정돈 후 seed/에 저장
 4. "/grow로 키울 수 있어요" 안내
+
+## seed vs materials
+
+- **seed/**: 내 생각의 씨앗 (이 명령어)
+- **materials/**: 외부 재료 (/import - 나중에)
 
 ## 다음 단계
 

@@ -1,8 +1,8 @@
 ---
-description: 씨앗 아이디어를 대화로 확장 (expand/brew/brainstorm 통합)
+description: seed와 materials를 합쳐 대화로 확장 (expand/brew/brainstorm 통합)
 arguments:
   - name: input
-    description: 새 아이디어 또는 growing 파일 경로
+    description: seed 파일, materials 파일, growing 파일, 또는 새 아이디어
     required: false
 ---
 
@@ -16,13 +16,24 @@ grow 스킬로 아이디어를 대화로 확장한다.
 /grow                        # growing/ 목록 또는 새 시작
 /grow "이런 생각이 있어..."    # 새 씨앗으로 시작
 /grow growing/my-idea.md     # 기존 이어가기
+/grow seed/my-seed.md        # seed에서 시작
+/grow materials/article.md   # material과 함께 시작
+```
+
+## 입력 소스
+
+```
+seed/      ← 내 생각의 씨앗
+materials/ ← 외부 재료 (기사, 문서, 대화 등)
+    ↓
+growing/   ← 둘이 만나서 해체 → 재조립 → 응축
 ```
 
 ## 동작
 
 1. $ARGUMENTS 없으면 → growing/ 폴더의 파일 목록 표시 후 선택 또는 새 시작
 2. 따옴표로 감싼 문자열이면 → 새 씨앗으로 growing/ 파일 생성 후 대화 시작
-3. 파일 경로면 → 해당 파일 읽고 이어가기
+3. 파일 경로면 → 해당 파일 읽고 이어가기 (seed/, materials/, growing/ 모두 가능)
 
 ## 세 가지 모드 (자동 전환)
 

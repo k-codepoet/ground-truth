@@ -27,7 +27,7 @@ allowed-tools: Write
 
 1. 사용자가 말한 내용을 파악
 2. 최소한의 정돈 (마크다운 형식)
-3. `inbox/{date}-{slug}.md`로 저장
+3. `seed/{date}-{slug}.md`로 저장
 4. 저장 완료 알림
 5. "/grow로 키울 수 있어요" 안내
 
@@ -37,11 +37,21 @@ allowed-tools: Write
 # {제목 - 내용에서 추출}
 
 > 날짜: YYYY-MM-DD
-> 출처: 대화
+> 참조: (materials 파일 경로, 없으면 생략)
 
 ---
 
 {사용자가 말한 내용 - 최소한의 정돈}
+```
+
+## seed vs materials
+
+- **seed/**: 내 생각의 씨앗 (이 스킬이 저장하는 곳)
+- **materials/**: 외부 재료 (기사, 문서, 대화 등) - /import로 저장 (나중에)
+
+seed는 materials를 참조할 수 있음:
+```markdown
+> 참조: materials/2025-12-31-some-article.md
 ```
 
 ## 규칙

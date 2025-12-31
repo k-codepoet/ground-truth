@@ -1,11 +1,11 @@
 ---
 name: knowledge-digest
-description: inbox의 raw 지식을 소화시켜 corpus로 분류/저장하는 워크플로우. inbox 폴더의 파일을 다룰 때, 지식 정리/분류 작업 시, 또는 사용자가 생각을 구조화하고 싶을 때 자동 활성화.
+description: growing의 익은 지식을 소화시켜 corpus로 분류/저장하는 워크플로우. growing 폴더의 파일을 다룰 때, 지식 정리/분류 작업 시, 또는 사용자가 생각을 구조화하고 싶을 때 자동 활성화.
 license: MIT
-compatibility: 이 프로젝트의 inbox/, corpus/ 구조 필요
+compatibility: 이 프로젝트의 seed/, materials/, growing/, corpus/ 구조 필요
 metadata:
   author: choigawoon
-  version: "0.1"
+  version: "0.2"
 allowed-tools: Read Write Edit
 ---
 
@@ -13,13 +13,15 @@ allowed-tools: Read Write Edit
 
 ## Overview
 
-inbox의 raw 지식을 **소크라테스식 질문**을 통해 소화시키고, 구조화하여 corpus에 저장합니다.
+growing의 익은 지식을 **소크라테스식 질문**을 통해 소화시키고, 구조화하여 corpus에 저장합니다.
 
 ## 프로젝트 구조
 
 ```
-inbox/              # raw 입력 (자유 형식)
-corpus/             # 구조화된 지식
+seed/               # 내 생각의 씨앗
+materials/          # 외부 재료
+growing/            # seed + materials가 합쳐져 확장되는 곳
+corpus/             # 구조화된 지식 (digest 결과물)
 ├── product/        # 무엇을 만들 것인가?
 ├── engineering/    # 어떻게 만들 것인가?
 ├── operations/     # 어떻게 돌릴 것인가?
@@ -31,7 +33,7 @@ corpus/             # 구조화된 지식
 ## Digest 워크플로우
 
 ### Step 1: 파일 확인
-inbox 폴더의 파일을 읽고 내용 파악.
+growing 폴더의 파일을 읽고 내용 파악. (status: growing인 파일 대상)
 
 ### Step 2: 소크라테스식 질문 (순차적으로, 하나씩)
 
@@ -79,7 +81,7 @@ domain: {Q5 답변}
 
 사용자 컨펌 후:
 1. `corpus/{domain}/{slug}.md`로 저장
-2. 원본 inbox 파일을 `inbox_archived/`로 이동
+2. 원본 growing 파일의 status를 `digested`로 변경
 3. 완료 보고
 
 ## 규칙
@@ -92,6 +94,7 @@ domain: {Q5 답변}
 
 ## 자동 활성화 조건
 
-- `inbox/` 폴더의 파일을 언급하거나 열 때
-- "정리해줘", "분류해줘", "소화시켜" 등의 요청
+- `growing/` 폴더의 파일을 언급하거나 열 때
+- "정리해줘", "분류해줘", "소화시켜", "digest 해줘" 등의 요청
+- /grow 세션에서 성숙도가 충분할 때 (turns >= 5, Open Questions 대부분 해결)
 - 지식 관리 관련 대화

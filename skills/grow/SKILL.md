@@ -22,7 +22,21 @@ allowed-tools: Read Write Edit
 - "확장해줘", "발전시켜", "키워봐", "더 파봐"
 - "brainstorm", "brew", "expand"
 - growing/ 파일을 열거나 언급할 때
+- seed/ 파일과 materials/를 합치고 싶을 때
 - "이런 생각이 있는데...", "아이디어가 있어"
+
+## 입력 소스
+
+grow는 두 가지 소스를 합쳐서 확장:
+
+```
+seed/      ← 내 생각의 씨앗
+materials/ ← 외부 재료 (기사, 문서, 대화 등)
+    ↓
+growing/   ← 둘이 만나서 해체 → 재조립 → 응축
+```
+
+사용자가 seed 파일이나 materials 파일을 언급하면, 해당 내용을 읽고 대화에 반영.
 
 ## 핵심 행동
 
