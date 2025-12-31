@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Ground Truth는 개인 지식 파이프라인 시스템입니다. 머릿속 암묵지를 구조화된 지식(corpus)으로 변환합니다.
 
 ```
-HEAD (암묵지) → INBOX (raw 캡처) → CORPUS (구조화) → EXPORTS (다양한 형태)
+HEAD (암묵지) → /seed (씨앗 저장) → /grow (확장) → /digest (구조화) → CORPUS → EXPORTS
 ```
 
 현재 Stage 0 (수동 검증 단계)입니다.
@@ -17,8 +17,9 @@ HEAD (암묵지) → INBOX (raw 캡처) → CORPUS (구조화) → EXPORTS (다�
 ### Knowledge Flow
 
 1. **inbox/** - Raw 지식 입력 (자유 형식 마크다운)
-2. **corpus/** - 구조화된 지식 저장 (frontmatter 필수)
-3. **brainstorm/** - 전략/개선안 문서
+2. **growing/** - 대화로 확장 중인 생각 (씨앗 → 성장)
+3. **corpus/** - 구조화된 지식 저장 (frontmatter 필수)
+4. **brainstorm/** - 전략/개선안 문서
 
 ### 6대 Domain (corpus 분류 체계)
 
@@ -48,6 +49,30 @@ domain: {위 6개 중 하나}
 
 ## Available Commands
 
+### /seed
+씨앗 아이디어를 inbox에 빠르게 저장합니다.
+
+```
+/seed                     # 직전 대화 내용 저장
+/seed 이런 생각이 들었어    # 입력 내용 저장
+```
+
+저장 후 `/grow`로 키울 수 있습니다.
+
+### /grow
+씨앗 아이디어를 대화로 확장합니다 (expand/brew/brainstorm 통합).
+
+```
+/grow                    # 목록 또는 새 시작
+/grow "아이디어..."       # 새 씨앗으로 시작
+/grow growing/파일.md    # 기존 이어가기
+```
+
+Claude가 대화 상대로서:
+- 질문으로 도전 ("왜 필요해?", "반대로 생각하면?")
+- 새 각도 제안 ("연결되는 건?", "극단적으로 밀면?")
+- 익으면 `/digest` 전환 제안
+
 ### /digest
 inbox 파일을 소크라테스식 질문으로 분석하여 corpus로 구조화합니다.
 
@@ -65,11 +90,18 @@ inbox 파일을 소크라테스식 질문으로 분석하여 corpus로 구조화
 
 ## Key Files
 
+- `skills/seed/SKILL.md` - /seed 스킬 정의
+- `skills/grow/SKILL.md` - /grow 스킬 정의
 - `skills/knowledge-digest/SKILL.md` - /digest 스킬 정의
+- `growing/_template.md` - growing 문서 템플릿
 - `inbox/_template.md` - inbox 문서 템플릿
 - `corpus/_template.md` - corpus 문서 템플릿
 - `brainstorm/00-summary-and-priorities.md` - 전략 우선순위 요약
 
 ## Session Start Behavior
 
-세션 시작 시 inbox/ 폴더의 미처리 파일을 확인하고 알려줍니다.
+세션 시작 시:
+1. **growing/** 폴더의 진행 중인 생각 확인 (status: growing)
+2. **inbox/** 폴더의 미처리 파일 확인
+3. 알림: "진행 중인 생각 N개, inbox에 M개 파일 있어요"
+4. `/grow`로 이어가거나 `/digest`로 정리할 수 있다고 안내

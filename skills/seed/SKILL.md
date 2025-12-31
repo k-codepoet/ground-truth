@@ -1,6 +1,6 @@
 ---
-name: capture
-description: 사용자의 생각을 inbox에 빠르게 캡처. "이거 저장해", "메모해", "inbox에 넣어" 등의 요청 시 자동 활성화.
+name: seed
+description: 씨앗 아이디어를 빠르게 저장. "이거 저장해", "메모해", "seed", "씨앗 심어" 등 요청 시 활성화. /grow로 키울 수 있는 raw 상태로 저장.
 license: MIT
 metadata:
   author: choigawoon
@@ -8,17 +8,19 @@ metadata:
 allowed-tools: Write
 ---
 
-# Capture Skill
+# Seed Skill - 씨앗 아이디어 저장
 
 ## Overview
 
-사용자가 말하는 생각을 **즉시 inbox에 저장**한다.
-정돈은 하되, 과하게 다듬지 않는다.
+사용자의 생각을 **씨앗 상태로 빠르게 저장**합니다.
+정돈은 하되, 과하게 다듬지 않습니다.
+나중에 `/grow`로 키울 수 있는 raw 상태를 유지합니다.
 
 ## 자동 활성화 조건
 
 - "이거 저장해", "메모해", "inbox에 넣어"
 - "기록해", "남겨", "캡처해"
+- "seed", "씨앗", "씨앗 심어"
 - 생각을 쏟아내는 대화
 
 ## 동작
@@ -27,6 +29,7 @@ allowed-tools: Write
 2. 최소한의 정돈 (마크다운 형식)
 3. `inbox/{date}-{slug}.md`로 저장
 4. 저장 완료 알림
+5. "/grow로 키울 수 있어요" 안내
 
 ## 파일 형식
 
@@ -47,3 +50,4 @@ allowed-tools: Write
 - 제목은 내용에서 핵심 키워드 추출
 - slug는 영문 kebab-case
 - 저장 후 바로 알림
+- `/grow`로 확장 가능함을 안내
