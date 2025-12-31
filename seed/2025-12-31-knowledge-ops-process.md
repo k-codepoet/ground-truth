@@ -1,8 +1,9 @@
-# Knowledge Ops - 작업 방식 정의
-
-> 날짜: 2024-12-31
-> 출처: digest 작업하면서 얻은 통찰
-
+---
+title: "Knowledge Ops - 작업 방식 정의"
+date: 2025-12-31
+references: []
+status: raw
+used_in:
 ---
 
 ## 핵심 원칙

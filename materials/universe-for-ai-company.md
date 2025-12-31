@@ -1,4 +1,11 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
+---
+title: "AI Company 세계관 - Agent 캐릭터 설정"
+date: 2025-12-31
+source: "Perplexity 리서치 + Claude 대화"
+type: conversation
+status: raw
+used_in:
+---
 
 # 최고의 개발자, 최고의 pm, 최고의 마케팅리서치, 최고의 기획자들 유명한 사람들 나열해줘
 

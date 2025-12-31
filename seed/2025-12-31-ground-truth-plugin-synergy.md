@@ -1,8 +1,9 @@
-# Ground Truth와 Plugin의 상호 시너지
-
-> 날짜: 2025-12-31
-> 출처: 대화
-
+---
+title: "Ground Truth와 Plugin의 상호 시너지"
+date: 2025-12-31
+references: []
+status: raw
+used_in:
 ---
 
 ground-truth에서 키우고 정리한 생각으로 knowledge-pipe-plugin을 만들 수 있다.

@@ -1,8 +1,14 @@
-# Knowledge Pipeline v3: Bootstrapping AI Company
+---
+title: "Knowledge Pipeline v3: Bootstrapping AI Company"
+date: 2025-01-02
+source: "Claude 대화"
+type: document
+status: raw
+used_in:
+---
 
 > **핵심 통찰**: Knowledge-ops가 첫 번째 topic이다. 스스로를 문서화하면서 시스템을 증명한다.
 > **목표**: AI Company가 지식을 자동으로 추출/구조화/출력할 수 있게 하는 기반 시스템
-> **갱신일**: 2025-01-02
 
 ---
 

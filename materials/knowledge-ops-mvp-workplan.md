@@ -1,7 +1,13 @@
-# Knowledge-ops MVP Workplan
+---
+title: "Knowledge-ops MVP Workplan"
+date: 2025-01-02
+source: "Claude 대화"
+type: document
+status: raw
+used_in:
+---
 
 > **Goal**: 말하는 대로 지식이 정리되는 시스템
-> **Date**: 2025-01-02
 > **Status**: Ready to Execute
 
 ---

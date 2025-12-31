@@ -1,4 +1,11 @@
-# Compiler Bootstrapping: The Art of Self-Creation
+---
+title: "Compiler Bootstrapping: The Art of Self-Creation"
+date: 2025-01-02
+source: "Claude 대화"
+type: document
+status: raw
+used_in:
+---
 
 > **핵심 개념**: 컴파일러가 자기 자신을 컴파일할 수 있게 되는 순환적 구축 과정
 

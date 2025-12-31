@@ -5,7 +5,7 @@ license: MIT
 compatibility: 이 프로젝트의 seed/, materials/, growing/, corpus/ 구조 필요
 metadata:
   author: choigawoon
-  version: "0.2"
+  version: "0.3"
 allowed-tools: Read Write Edit
 ---
 
@@ -46,6 +46,44 @@ seed/materials 사용 시:
 - turns >= 5
 - Open Questions 대부분 해결
 - 같은 포인트 반복
+
+## 파일 형식 (growing/)
+
+growing 파일은 이미 YAML frontmatter 형식 사용:
+
+```markdown
+---
+title: "{제목}"
+created: "YYYY-MM-DD"
+updated: "YYYY-MM-DD HH:MM"
+turns: 0
+status: growing
+sources: []
+---
+
+## Seed
+{최초 아이디어}
+
+---
+
+## Sources
+<!-- 사용된 seed/materials 파일 목록 -->
+
+---
+
+## Growth Log
+<!-- 세션별 대화 기록 -->
+
+---
+
+## Current State
+{현재까지 종합}
+
+---
+
+## Open Questions
+- [ ]
+```
 
 ## 세션 동작
 

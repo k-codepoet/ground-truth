@@ -5,7 +5,7 @@ license: MIT
 compatibility: 이 프로젝트의 seed/, materials/, growing/, corpus/ 구조 필요
 metadata:
   author: choigawoon
-  version: "0.2"
+  version: "0.3"
 allowed-tools: Read Write Edit
 ---
 
@@ -20,20 +20,29 @@ allowed-tools: Read Write Edit
 3. `seed/{date}-{slug}.md`로 저장
 4. "/grow로 키울 수 있어요" 안내
 
-## 파일 형식
+## 파일 형식 (YAML frontmatter)
 
 ```markdown
-# {제목}
-
-> 날짜: YYYY-MM-DD
-> 참조: (materials 경로, 없으면 생략)
-> status: raw
-> used_in: (growing 경로, 사용 후 기록)
-
+---
+title: "{제목}"
+date: YYYY-MM-DD
+references: []
+status: raw
+used_in:
 ---
 
 {내용}
 ```
+
+## 필드 설명
+
+| 필드 | 필수 | 설명 |
+|------|------|------|
+| title | Y | 핵심 키워드 추출한 제목 |
+| date | Y | 생성일 (YYYY-MM-DD) |
+| references | N | 참조한 materials 경로 배열 |
+| status | Y | raw → used (grow에서 사용 후) |
+| used_in | N | growing 파일 경로 (사용 후 기록) |
 
 ## seed vs materials
 

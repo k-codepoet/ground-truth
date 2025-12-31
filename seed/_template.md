@@ -1,10 +1,9 @@
-# {제목}
-
-> 날짜: YYYY-MM-DD
-> 참조: (materials 파일 경로, 없으면 생략)
-> status: raw
-> used_in: (growing 파일 경로, 사용 후 기록)
-
+---
+title: "{제목}"
+date: YYYY-MM-DD
+references: []
+status: raw
+used_in:
 ---
 
 {내 생각의 씨앗}

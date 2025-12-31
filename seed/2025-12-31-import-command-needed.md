@@ -1,8 +1,10 @@
-# /import 명령어 필요
-
-> 날짜: 2025-12-31
-> 참조: materials/2025-12-31-knowledge-pipeline-structure-grow.md
-
+---
+title: "/import 명령어 필요"
+date: 2025-12-31
+references:
+  - materials/2025-12-31-knowledge-pipeline-structure-grow.md
+status: raw
+used_in:
 ---
 
 외부 재료(기사, 대화, 문서, 서비스, 제품 등)를 materials/에 넣는 명령어가 필요하다.

@@ -5,7 +5,7 @@ license: MIT
 compatibility: 이 프로젝트의 seed/, materials/, growing/, corpus/ 구조 필요
 metadata:
   author: choigawoon
-  version: "0.2"
+  version: "0.3"
 allowed-tools: Read Write Edit
 ---
 
@@ -34,6 +34,23 @@ growing의 익은 지식을 **소크라테스식 질문**으로 소화시켜 cor
 1. `corpus/{domain}/{slug}.md`로 저장
 2. 원본 growing 파일의 status → `digested`
 3. 완료 보고
+
+## corpus 파일 형식 (YAML frontmatter)
+
+```markdown
+---
+title: {제목}
+domain: {product|engineering|operations|growth|business|ai-automation}
+---
+
+## Context
+
+{왜 이 지식이 필요한지}
+
+## Content
+
+{핵심 내용}
+```
 
 ## 6대 Domain
 

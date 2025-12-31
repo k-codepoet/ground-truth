@@ -1,3 +1,12 @@
+---
+title: "Home Lab 인프라 설정 가이드"
+date: 2025-12-31
+source: "Claude 대화"
+type: document
+status: raw
+used_in:
+---
+
 Based on your home lab setup from memory:
 
 | Device | Specs | IP |
@@ -199,5 +208,3 @@ flowchart TB
 5. **Tailscale Configuration**:
    - Ensure all nodes are in Tailscale VPN mesh
    - Configure routing rules in NAS Traefik to reach other nodes
-
-Want me to create a step-by-step setup plan for any of these?

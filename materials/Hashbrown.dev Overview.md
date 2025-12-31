@@ -1,4 +1,11 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
+---
+title: "Hashbrown.dev Overview - Generative UI Framework"
+date: 2025-12-31
+source: "Perplexity 리서치"
+type: article
+status: raw
+used_in:
+---
 
 ## Hashbrown.dev Overview
 
