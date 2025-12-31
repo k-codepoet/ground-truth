@@ -21,6 +21,18 @@ seed/ + materials/ → /grow → /digest → CORPUS
 | `/grow` | seed + materials 대화로 확장 | growing/ |
 | `/digest` | 구조화하여 corpus로 | corpus/ |
 
+## /grow 대화 모드
+
+대화 흐름에 따라 자동 전환:
+- **expand**: 아이디어 확장 ("연결되는 건?", "더 큰 그림에서?")
+- **brew**: 깊이 숙성 ("왜 이게 중요해?", "핵심이 뭐야?")
+- **brainstorm**: 자유로운 발산 ("미친 아이디어라면?", "반대로 하면?")
+
+**Digest 전환 조건** (제안만, 강요 안 함):
+- turns >= 5
+- Open Questions 대부분 해결
+- 같은 포인트 반복
+
 ## 6대 Domain (corpus 분류)
 
 | Domain | 핵심 질문 |
@@ -34,25 +46,21 @@ seed/ + materials/ → /grow → /digest → CORPUS
 
 ## Key Files
 
-**스킬** (자동 활성화되는 워크플로우)
-- `skills/seed/SKILL.md`
-- `skills/grow/SKILL.md` + `references/growing-format.md`
-- `skills/digest/SKILL.md` + `references/corpus-format.md`
+- **스킬**: `skills/{seed,grow,digest}/SKILL.md`
+- **참조**: `skills/*/references/*.md` (파일 형식 상세)
+- **커맨드**: `.claude/commands/{seed,grow,digest}.md`
+- **템플릿**: `{seed,materials,growing,corpus}/_template.md`
 
-**커맨드** (사용자가 `/`로 호출)
-- `.claude/commands/seed.md`
-- `.claude/commands/grow.md`
-- `.claude/commands/digest.md`
+## Status 상태 흐름
 
-**템플릿** (문서 형식 참조)
-- `seed/_template.md`, `materials/_template.md`, `growing/_template.md`, `corpus/_template.md`
+| 폴더 | 상태값 |
+|------|--------|
+| seed/, materials/ | `raw` → `used` |
+| growing/ | `growing` → `digested` |
 
 ## Session Start Behavior
 
-세션 시작 시:
-1. growing/ 폴더의 진행 중인 생각 확인 (status: growing)
-2. seed/ 폴더의 미처리 씨앗 확인 (`_template.md` 제외)
-3. 알림 후 `/grow` 또는 `/digest` 안내
+세션 시작 시 growing/(status: growing)과 seed/(raw) 확인 후 `/grow` 또는 `/digest` 안내.
 
 ## 핵심 규칙
 
@@ -64,5 +72,5 @@ seed/ + materials/ → /grow → /digest → CORPUS
 ## Source Tracking
 
 seed/materials 사용 시:
-- 해당 파일의 `status` → `used`
-- 해당 파일의 `used_in` → growing 파일 경로 기록
+- 해당 파일의 `status` → `used`, `used_in` → growing 경로
+- growing 파일의 `sources` 배열에 추가
