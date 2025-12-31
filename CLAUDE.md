@@ -7,21 +7,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Ground Truth는 개인 지식 파이프라인 시스템입니다. 머릿속 암묵지를 구조화된 지식(corpus)으로 변환합니다.
 
 ```
-HEAD (암묵지) → /seed (씨앗 저장) → /grow (확장) → /digest (구조화) → CORPUS → EXPORTS
+HEAD (암묵지) → /seed → /grow → /digest → CORPUS → EXPORTS
+                inbox    growing   corpus
 ```
 
 현재 Stage 0 (수동 검증 단계)입니다.
 
-## Architecture
+## Knowledge Flow
 
-### Knowledge Flow
+| 단계 | 폴더 | 설명 |
+|------|------|------|
+| 1. Seed | `inbox/` | Raw 지식 입력 (자유 형식) |
+| 2. Grow | `growing/` | 대화로 확장 중인 생각 |
+| 3. Digest | `corpus/` | 구조화된 지식 (frontmatter 필수) |
+| 참고 | `docs/humans/knowledge-ops/brainstorm/` | 전략/개선안 문서 |
 
-1. **inbox/** - Raw 지식 입력 (자유 형식 마크다운)
-2. **growing/** - 대화로 확장 중인 생각 (씨앗 → 성장)
-3. **corpus/** - 구조화된 지식 저장 (frontmatter 필수)
-4. **brainstorm/** - 전략/개선안 문서
-
-### 6대 Domain (corpus 분류 체계)
+## 6대 Domain (corpus 분류 체계)
 
 | Domain | 핵심 질문 |
 |--------|----------|
@@ -31,21 +32,6 @@ HEAD (암묵지) → /seed (씨앗 저장) → /grow (확장) → /digest (구�
 | growth | 어떻게 알릴 것인가? |
 | business | 어떻게 유지할 것인가? |
 | ai-automation | 어떻게 위임할 것인가? |
-
-### Corpus Document Format
-
-```markdown
----
-title: {제목}
-domain: {위 6개 중 하나}
----
-
-## Context
-{왜 이 지식이 필요한지}
-
-## Content
-{핵심 내용}
-```
 
 ## Available Commands
 
@@ -77,7 +63,8 @@ Claude가 대화 상대로서:
 inbox 파일을 소크라테스식 질문으로 분석하여 corpus로 구조화합니다.
 
 ```
-/digest inbox/파일명.md
+/digest                  # inbox 목록 보여주고 선택
+/digest inbox/파일명.md  # 특정 파일 처리
 ```
 
 질문 순서:
@@ -88,20 +75,90 @@ inbox 파일을 소크라테스식 질문으로 분석하여 corpus로 구조화
 5. 분류: "6개 domain 중 어디야?"
 6. 연결: "기존 corpus에 연결되는 거 있어?"
 
+완료 후: 원본 파일을 `inbox_archived/`로 이동
+
 ## Key Files
 
-- `skills/seed/SKILL.md` - /seed 스킬 정의
-- `skills/grow/SKILL.md` - /grow 스킬 정의
-- `skills/knowledge-digest/SKILL.md` - /digest 스킬 정의
-- `growing/_template.md` - growing 문서 템플릿
+**스킬 정의**
+- `skills/seed/SKILL.md` - /seed 스킬
+- `skills/grow/SKILL.md` - /grow 스킬
+- `skills/knowledge-digest/SKILL.md` - /digest 스킬
+
+**커맨드 정의**
+- `.claude/commands/seed.md` - /seed 커맨드
+- `.claude/commands/grow.md` - /grow 커맨드
+- `.claude/commands/digest.md` - /digest 커맨드
+
+**템플릿**
 - `inbox/_template.md` - inbox 문서 템플릿
+- `growing/_template.md` - growing 문서 템플릿
 - `corpus/_template.md` - corpus 문서 템플릿
-- `brainstorm/00-summary-and-priorities.md` - 전략 우선순위 요약
+
+**전략 문서**
+- `docs/humans/knowledge-ops/brainstorm/00-summary-and-priorities.md` - 전략 요약
 
 ## Session Start Behavior
 
 세션 시작 시:
 1. **growing/** 폴더의 진행 중인 생각 확인 (status: growing)
-2. **inbox/** 폴더의 미처리 파일 확인
+2. **inbox/** 폴더의 미처리 파일 확인 (`_template.md` 제외)
 3. 알림: "진행 중인 생각 N개, inbox에 M개 파일 있어요"
 4. `/grow`로 이어가거나 `/digest`로 정리할 수 있다고 안내
+
+## 핵심 규칙
+
+- 질문은 **하나씩 순차적으로** (한꺼번에 던지지 않음)
+- 사용자 **컨펌 없이 corpus에 저장하지 않음**
+- 템플릿 파일 (`_template.md`)은 처리 대상에서 제외
+- slug는 영문 kebab-case로 자동 생성
+
+## Document Formats
+
+### Inbox (inbox/{date}-{slug}.md)
+```markdown
+# {제목}
+
+> 날짜: YYYY-MM-DD
+> 출처: (대화/메모/링크)
+
+---
+
+{내용}
+```
+
+### Growing (growing/{slug}.md)
+```markdown
+---
+title: "{제목}"
+created: "YYYY-MM-DD"
+updated: "YYYY-MM-DD HH:MM"
+turns: 0
+status: growing
+---
+
+## Seed
+{최초 아이디어}
+
+## Growth Log
+<!-- 세션별: C: 질문, U: 답변, Insight: 통찰 -->
+
+## Current State
+{현재까지 종합}
+
+## Open Questions
+- [ ] 열린 질문들
+```
+
+### Corpus (corpus/{domain}/{slug}.md)
+```markdown
+---
+title: {제목}
+domain: {6개 중 하나}
+---
+
+## Context
+{왜 이 지식이 필요한지}
+
+## Content
+{핵심 내용}
+```
