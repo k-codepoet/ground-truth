@@ -2,7 +2,7 @@
 title: "{제목}"
 date: YYYY-MM-DD
 source: "(URL, 대화, 문서 등)"
-type: article|conversation|document|service|product|other
+type: article|document|conversation|snippet|other
 status: raw
 used_in:
 ---

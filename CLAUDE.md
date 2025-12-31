@@ -20,12 +20,15 @@ Ground Truth는 개인 지식 파이프라인 시스템입니다. 머릿속 암�
 | 명령어 | 설명 | 저장 위치 |
 |--------|------|----------|
 | `/gemify:inbox [내용]` | 내 생각 포착 | inbox/thoughts/ |
+| `/gemify:import [내용]` | 외부 재료 가져오기 | inbox/materials/ |
 | `/gemify:draft [파일/아이디어]` | 원석 다듬기 (대화로 확장) | drafts/ |
 | `/gemify:library [파일]` | 보석 정리 (library로) | library/ |
 
 ```bash
 /gemify:inbox                        # 직전 대화 내용 저장
 /gemify:inbox 이런 생각이 들었어       # 입력 내용 저장
+/gemify:import                       # 외부 재료 가져오기
+/gemify:import https://example.com   # URL에서 가져오기
 /gemify:draft                        # drafts 목록 또는 새 시작
 /gemify:draft "새로운 아이디어"        # 새 원석으로 시작
 /gemify:draft drafts/my-idea.md      # 기존 이어가기
@@ -80,7 +83,7 @@ Ground Truth는 개인 지식 파이프라인 시스템입니다. 머릿속 암�
 | 폴더 | 상태값 |
 |------|--------|
 | inbox/ | `raw` → `used` |
-| drafts/ | `developing` → `filed` |
+| drafts/ | `cutting` → `set` |
 
 ## 핵심 규칙
 
@@ -100,8 +103,8 @@ inbox 파일 사용 시:
 | 폴더 | 필수 필드 |
 |------|----------|
 | inbox/thoughts/ | `title`, `date`, `status` (raw/used), `used_in` |
-| inbox/materials/ | `title`, `date`, `source`, `type`, `status` |
-| drafts/ | `title`, `created`, `updated`, `turns`, `status`, `sources` |
+| inbox/materials/ | `title`, `date`, `source`, `type` (article\|document\|conversation\|snippet\|other), `status` |
+| drafts/ | `title`, `created`, `updated`, `turns`, `revision`, `status` (cutting→set), `sources`, `history` |
 | library/ | `title`, `domain` |
 
 ## 세션 시작 시

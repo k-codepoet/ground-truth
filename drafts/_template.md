@@ -3,8 +3,10 @@ title: "{제목}"
 created: "YYYY-MM-DD"
 updated: "YYYY-MM-DD HH:MM"
 turns: 0
-status: growing
+revision: 1
+status: cutting
 sources: []
+history: []
 ---
 
 ## Seed

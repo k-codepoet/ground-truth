@@ -4,26 +4,26 @@ created: "2024-12-31"
 updated: "2024-12-31 09:45"
 turns: 3
 revision: 3
-status: digested
+status: set
 sources:
   - seed/2024-12-31-grow-mode-expansion.md
   - materials/2024-12-31-claude-md-review.md
 history:
   - rev: 1
-    mode: branch
+    mode: facet
     date: 2024-12-31
     summary: "모드 구조 정리: BFS + DFS, progressive disclosure 히스토리"
-    file: .history/grow-mode-expansion/01-expand-2024-12-31.md
+    file: .history/grow-mode-expansion/01-facet-2024-12-31.md
   - rev: 2
-    mode: branch
+    mode: facet
     date: 2024-12-31
     summary: "revision 기준 정의: pivot(방향 전환) 시 스냅샷"
-    file: .history/grow-mode-expansion/02-expand-2024-12-31.md
+    file: .history/grow-mode-expansion/02-facet-2024-12-31.md
   - rev: 3
-    mode: branch
+    mode: facet
     date: 2024-12-31
-    summary: "용어 확정: branch/ripen (식물 메타포)"
-    file: .history/grow-mode-expansion/03-expand-2024-12-31.md
+    summary: "용어 확정: facet/polish (보석 메타포)"
+    file: .history/grow-mode-expansion/03-facet-2024-12-31.md
 ---
 
 ## Current State
@@ -31,18 +31,18 @@ history:
 ### 모드 (확정)
 
 ```
-/grow
-├── branch - 가지치기, 넓게 뻗기 (BFS)
-└── ripen  - 익히기, 응축 (DFS) → digest 준비
+/gemify:draft
+├── facet  - 여러 면 탐색, 넓게 (BFS)
+└── polish - 깊이 연마, 광택 (DFS) → library 준비
 
-기본: branch
-트리거: "익혀봐", "좀 더 익히자" → ripen
+기본: facet
+트리거: "연마해봐", "좀 더 다듬자", "핵심이 뭐야" → polish
 ```
 
 ### 히스토리 구조 (확정)
 
 ```
-growing/
+drafts/
 ├── {slug}.md              # 현재 상태
 └── .history/{slug}/
     └── {rev}-{mode}-{date}.md
