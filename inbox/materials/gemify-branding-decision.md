@@ -1,3 +1,12 @@
+---
+title: "Gemify 브랜딩 의사결정 기록"
+date: 2025-01-02
+source: "Claude 대화"
+type: document
+status: raw
+used_in:
+---
+
 # Gemify 브랜딩 의사결정 기록
 
 > **Date**: 2025-01-02

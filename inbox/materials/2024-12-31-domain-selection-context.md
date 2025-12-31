@@ -1,7 +1,8 @@
 ---
 title: "domain 선택 시 판단 어려움 발견"
 date: 2024-12-31
-references: []
+source: "Claude 대화"
+type: conversation
 status: raw
 used_in:
 ---

@@ -6,8 +6,8 @@ turns: 3
 revision: 3
 status: set
 sources:
-  - seed/2024-12-31-grow-mode-expansion.md
-  - materials/2024-12-31-claude-md-review.md
+  - inbox/thoughts/2024-12-31-grow-mode-expansion.md
+  - inbox/materials/2024-12-31-claude-md-review.md
 history:
   - rev: 1
     mode: facet

@@ -10,3 +10,7 @@ domain: {product|engineering|operations|growth|business|ai-automation}
 ## Content
 
 {핵심 내용}
+
+## Connections
+
+{관련 문서 링크}

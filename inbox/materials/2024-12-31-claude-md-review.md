@@ -1,9 +1,10 @@
 ---
 title: "CLAUDE.md 리뷰 및 개선점"
 date: 2024-12-31
-references: []
+source: "직접 리뷰"
+type: document
 status: used
-used_in: growing/grow-mode-expansion.md
+used_in: drafts/grow-mode-expansion.md
 ---
 
 # CLAUDE.md 리뷰 결과

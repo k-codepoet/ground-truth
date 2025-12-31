@@ -1,3 +1,12 @@
+---
+title: "제품 네이밍 & 브랜딩: 스토리와 구조의 분리 원칙"
+date: 2025-01-02
+source: "Gemify 브랜딩 의사결정 과정에서 도출"
+type: document
+status: raw
+used_in:
+---
+
 # 제품 네이밍 & 브랜딩: 스토리와 구조의 분리 원칙
 
 > **Type**: Material (외부 재료)
