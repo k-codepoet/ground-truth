@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "세션 시작. inbox/ 폴더를 확인하고 처리되지 않은 파일이 있으면 사용자에게 알려줘. _template.md는 제외. 파일이 있으면 '/digest로 정리할 수 있어요'라고 안내."
+          }
+        ]
+      }
+    ]
+  }
+}
