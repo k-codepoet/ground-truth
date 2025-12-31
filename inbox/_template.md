@@ -1,8 +1,8 @@
----
-id: raw-{timestamp}
-created: {ISO8601}
-source: {slack|discord|web|sms|voice|manual}
-status: raw
+# {제목}
+
+> 날짜: YYYY-MM-DD
+> 출처: (대화/메모/링크/etc)
+
 ---
 
-{자유 형식 내용}
+{내용을 자유롭게 작성}
