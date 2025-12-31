@@ -102,10 +102,42 @@ inbox 파일 사용 시:
 
 | 폴더 | 필수 필드 |
 |------|----------|
-| inbox/thoughts/ | `title`, `date`, `status` (raw/used), `used_in` |
-| inbox/materials/ | `title`, `date`, `source`, `type` (article\|document\|conversation\|snippet\|other), `status` |
+| inbox/thoughts/ | `title`, `date`, `status` (raw/used), `used_in`, `references` |
+| inbox/materials/ | `title`, `date`, `source`, `type` (article\|document\|conversation\|snippet\|other), `status`, `used_in` |
 | drafts/ | `title`, `created`, `updated`, `turns`, `revision`, `status` (cutting→set), `sources`, `history` |
 | library/ | `title`, `domain` |
+
+## 템플릿 본문 구조
+
+**drafts/**
+```
+## Seed
+{최초 아이디어}
+
+## Sources
+<!-- 사용된 inbox 파일 목록 -->
+
+## Growth Log
+<!-- 세션별 대화 기록 -->
+
+## Current State
+{현재까지 종합}
+
+## Open Questions
+- [ ] ...
+```
+
+**library/**
+```
+## Context
+{왜 이 지식이 필요한지}
+
+## Content
+{핵심 내용}
+
+## Connections
+{관련 문서 링크}
+```
 
 ## 세션 시작 시
 
