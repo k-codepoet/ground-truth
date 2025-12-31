@@ -7,8 +7,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Ground Truth는 개인 지식 파이프라인 시스템입니다. 머릿속 암묵지를 구조화된 지식(corpus)으로 변환합니다.
 
 ```
-HEAD (암묵지) → /seed → /grow → /digest → CORPUS → EXPORTS
-                inbox    growing   corpus
+seed/ + materials/ → /grow → /digest → CORPUS → EXPORTS
+ 내 생각   외부재료     growing    corpus
 ```
 
 현재 Stage 0 (수동 검증 단계)입니다.
@@ -17,10 +17,12 @@ HEAD (암묵지) → /seed → /grow → /digest → CORPUS → EXPORTS
 
 | 단계 | 폴더 | 설명 |
 |------|------|------|
-| 1. Seed | `inbox/` | Raw 지식 입력 (자유 형식) |
-| 2. Grow | `growing/` | 대화로 확장 중인 생각 |
-| 3. Digest | `corpus/` | 구조화된 지식 (frontmatter 필수) |
-| 참고 | `docs/humans/knowledge-ops/brainstorm/` | 전략/개선안 문서 |
+| 1. Seed | `seed/` | 내 생각의 씨앗 |
+| 1. Materials | `materials/` | 외부 재료 (기사, 문서, 대화 등) |
+| 2. Grow | `growing/` | seed + materials가 만나 확장 |
+| 3. Digest | `corpus/` | 밀도 있는 구조화된 지식 |
+
+**핵심 개념**: seed와 materials가 grow에서 만나 해체 → 재조립 → 응축되어 밀도 있는 지식이 됨.
 
 ## 6대 Domain (corpus 분류 체계)
 
@@ -36,7 +38,7 @@ HEAD (암묵지) → /seed → /grow → /digest → CORPUS → EXPORTS
 ## Available Commands
 
 ### /seed
-씨앗 아이디어를 inbox에 빠르게 저장합니다.
+내 생각의 씨앗을 seed/에 빠르게 저장합니다.
 
 ```
 /seed                     # 직전 대화 내용 저장
@@ -46,12 +48,14 @@ HEAD (암묵지) → /seed → /grow → /digest → CORPUS → EXPORTS
 저장 후 `/grow`로 키울 수 있습니다.
 
 ### /grow
-씨앗 아이디어를 대화로 확장합니다 (expand/brew/brainstorm 통합).
+seed와 materials를 합쳐 대화로 확장합니다.
 
 ```
-/grow                    # 목록 또는 새 시작
-/grow "아이디어..."       # 새 씨앗으로 시작
-/grow growing/파일.md    # 기존 이어가기
+/grow                        # growing/ 목록 또는 새 시작
+/grow "아이디어..."          # 새 씨앗으로 시작
+/grow growing/파일.md        # 기존 이어가기
+/grow seed/my-seed.md        # seed에서 시작
+/grow materials/article.md   # material과 함께 시작
 ```
 
 Claude가 대화 상대로서:
@@ -60,11 +64,11 @@ Claude가 대화 상대로서:
 - 익으면 `/digest` 전환 제안
 
 ### /digest
-inbox 파일을 소크라테스식 질문으로 분석하여 corpus로 구조화합니다.
+growing 파일을 소크라테스식 질문으로 분석하여 corpus로 구조화합니다.
 
 ```
-/digest                  # inbox 목록 보여주고 선택
-/digest inbox/파일명.md  # 특정 파일 처리
+/digest                      # growing 목록 보여주고 선택
+/digest growing/파일명.md    # 특정 파일 처리
 ```
 
 질문 순서:
@@ -75,7 +79,10 @@ inbox 파일을 소크라테스식 질문으로 분석하여 corpus로 구조화
 5. 분류: "6개 domain 중 어디야?"
 6. 연결: "기존 corpus에 연결되는 거 있어?"
 
-완료 후: 원본 파일을 `inbox_archived/`로 이동
+완료 후: growing 파일 status를 `digested`로 변경
+
+### /import (예정)
+외부 재료를 materials/에 저장합니다. (나중에 구현)
 
 ## Key Files
 
@@ -90,19 +97,17 @@ inbox 파일을 소크라테스식 질문으로 분석하여 corpus로 구조화
 - `.claude/commands/digest.md` - /digest 커맨드
 
 **템플릿**
-- `inbox/_template.md` - inbox 문서 템플릿
+- `seed/_template.md` - seed 문서 템플릿
+- `materials/_template.md` - materials 문서 템플릿
 - `growing/_template.md` - growing 문서 템플릿
 - `corpus/_template.md` - corpus 문서 템플릿
-
-**전략 문서**
-- `docs/humans/knowledge-ops/brainstorm/00-summary-and-priorities.md` - 전략 요약
 
 ## Session Start Behavior
 
 세션 시작 시:
 1. **growing/** 폴더의 진행 중인 생각 확인 (status: growing)
-2. **inbox/** 폴더의 미처리 파일 확인 (`_template.md` 제외)
-3. 알림: "진행 중인 생각 N개, inbox에 M개 파일 있어요"
+2. **seed/** 폴더의 미처리 씨앗 확인 (`_template.md` 제외)
+3. 알림: "진행 중인 생각 N개, seed에 M개 있어요"
 4. `/grow`로 이어가거나 `/digest`로 정리할 수 있다고 안내
 
 ## 핵심 규칙
@@ -114,16 +119,29 @@ inbox 파일을 소크라테스식 질문으로 분석하여 corpus로 구조화
 
 ## Document Formats
 
-### Inbox (inbox/{date}-{slug}.md)
+### Seed (seed/{date}-{slug}.md)
 ```markdown
 # {제목}
 
 > 날짜: YYYY-MM-DD
-> 출처: (대화/메모/링크)
+> 참조: (materials 파일 경로, 없으면 생략)
 
 ---
 
-{내용}
+{내 생각의 씨앗}
+```
+
+### Materials (materials/{slug}.md)
+```markdown
+# {제목}
+
+> 날짜: YYYY-MM-DD
+> 출처: (URL, 대화, 문서 등)
+> 유형: (article|conversation|document|service|product|other)
+
+---
+
+{외부 재료 내용}
 ```
 
 ### Growing (growing/{slug}.md)
