@@ -116,4 +116,8 @@ inbox 파일 사용 시:
 
 ## 세션 시작 시
 
-SessionStart hook으로 자동 실행됨 (`.claude/settings.json` 참조)
+SessionStart hook 자동 실행:
+- `drafts/`에서 `status: cutting` 파일 확인
+- `inbox/thoughts/`에서 `status: raw` 파일 확인
+- 진행 중인 작업 있으면 `/gemify:draft`로 이어가기 안내
+- `_template.md`는 제외
