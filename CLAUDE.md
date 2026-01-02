@@ -23,6 +23,7 @@ Ground Truth는 개인 지식 파이프라인 시스템입니다. 머릿속 암�
 | `/gemify:import [내용]` | 외부 재료 가져오기 | inbox/materials/ |
 | `/gemify:draft [파일/아이디어]` | 원석 다듬기 (대화로 확장) | drafts/ |
 | `/gemify:library [파일]` | 보석 정리 (library로) | library/ |
+| `/gemify:improve-plugin [경로]` | 플러그인 개선 (add-dir 후 작업) | - |
 
 ```bash
 /gemify:inbox                        # 직전 대화 내용 저장
@@ -34,6 +35,8 @@ Ground Truth는 개인 지식 파이프라인 시스템입니다. 머릿속 암�
 /gemify:draft drafts/my-idea.md      # 기존 이어가기
 /gemify:library                      # drafts 목록에서 선택
 /gemify:library drafts/my-idea.md    # 특정 파일 처리
+/gemify:improve-plugin               # inbox에서 플러그인 관련 아이디어 확인
+/gemify:improve-plugin ~/plugins/x   # 특정 플러그인 개선 (add-dir 제안)
 ```
 
 ## /gemify:draft 대화 모드
