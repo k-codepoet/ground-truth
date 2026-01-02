@@ -107,37 +107,12 @@ inbox 파일 사용 시:
 | drafts/ | `title`, `created`, `updated`, `turns`, `revision`, `status` (cutting→set), `sources`, `history` |
 | library/ | `title`, `domain` |
 
-## 템플릿 본문 구조
+## 파일 네이밍
 
-**drafts/**
-```
-## Seed
-{최초 아이디어}
-
-## Sources
-<!-- 사용된 inbox 파일 목록 -->
-
-## Growth Log
-<!-- 세션별 대화 기록 -->
-
-## Current State
-{현재까지 종합}
-
-## Open Questions
-- [ ] ...
-```
-
-**library/**
-```
-## Context
-{왜 이 지식이 필요한지}
-
-## Content
-{핵심 내용}
-
-## Connections
-{관련 문서 링크}
-```
+- **inbox/thoughts/**: `YYYY-MM-DD-{slug}.md`
+- **inbox/materials/**: `YYYY-MM-DD-{slug}.md` 또는 `{slug}.md`
+- **drafts/**: `{slug}.md`
+- **library/**: `{slug}.md` (domain 폴더 내)
 
 ## 세션 시작 시
 
