@@ -3,8 +3,8 @@ title: CED 플러그인 가이드 vs 공식 문서 비교 분석
 date: 2026-01-02
 source: Claude Code 공식 문서 웹검색 비교
 type: document
-status: raw
-used_in: null
+status: used
+used_in: ced 플러그인 개선 작업
 ---
 
 # CED 플러그인 가이드 vs 공식 문서 비교

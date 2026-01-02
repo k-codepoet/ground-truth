@@ -1,8 +1,8 @@
 ---
 title: CED 플러그인 개선 계획
 date: 2026-01-02
-status: raw
-used_in: null
+status: used
+used_in: ced 플러그인 개선 작업
 references:
   - inbox/materials/2026-01-02-ced-plugin-official-docs-comparison.md
 ---
