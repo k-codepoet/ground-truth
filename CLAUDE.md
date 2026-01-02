@@ -94,12 +94,13 @@ inbox 파일 사용 시:
 | inbox/thoughts/ | `title`, `date`, `status` (raw/used), `used_in`, `references` |
 | inbox/materials/ | `title`, `date`, `source`, `type` (article\|document\|conversation\|snippet\|other), `status`, `used_in` |
 | drafts/ | `title`, `created`, `updated`, `turns`, `revision`, `status` (cutting→set), `sources`, `history` |
-| library/ | `title`, `domain`, `views` (해당 문서가 포함된 view 목록) |
+| library/ | `title`, `domain`, `views` (해당 문서가 포함된 view 목록 - 역참조) |
+| views/by-subject/ | `title`, `subject`, `updated`, `sources` (library 문서 경로 목록) |
 
 ## 파일 네이밍
 
 - **inbox/thoughts/**: `YYYY-MM-DD-{slug}.md`
-- **inbox/materials/**: `YYYY-MM-DD-{slug}.md` 또는 `{slug}.md`
+- **inbox/materials/**: `YYYY-MM-DD-{slug}.md`
 - **drafts/**: `{slug}.md`
 - **library/**: `{slug}.md` (domain 폴더 내)
 - **views/by-subject/**: `{subject}.md`
