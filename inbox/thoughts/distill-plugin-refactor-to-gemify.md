@@ -1,7 +1,8 @@
 ---
 title: distill 플러그인을 Gemify로 리팩토링
 created: 2025-12-31
-status: raw
+status: used
+used_in: /home/choigawoon/k-codepoet/my-claude-plugins/plugins/gemify/
 tags:
   - refactoring
   - plugin
