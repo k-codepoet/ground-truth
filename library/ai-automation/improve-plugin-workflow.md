@@ -1,6 +1,7 @@
 ---
 title: 플러그인 개선 워크플로우 - 세션 한정 스코프
 domain: ai-automation
+views: [gemify]
 ---
 
 ## Context

@@ -1,6 +1,7 @@
 ---
 title: 실행 우선 원칙 - 완벽보다 동작
 domain: ai-automation
+views: [gemify]
 ---
 
 ## Context

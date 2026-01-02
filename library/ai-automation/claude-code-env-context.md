@@ -1,6 +1,7 @@
 ---
 title: Claude Code 환경 컨텍스트 활용
 domain: ai-automation
+views: [gemify]
 ---
 
 # Claude Code 환경 컨텍스트 활용

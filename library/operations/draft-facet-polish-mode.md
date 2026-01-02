@@ -1,6 +1,7 @@
 ---
 title: "/gemify:draft의 facet/polish 모드"
 domain: operations
+views: [gemify]
 ---
 
 ## Context

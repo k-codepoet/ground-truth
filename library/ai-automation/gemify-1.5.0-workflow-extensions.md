@@ -2,6 +2,7 @@
 title: Gemify 1.5.0 워크플로우 확장 - capture-pair, retro
 domain: ai-automation
 created_via: retro
+views: [gemify]
 ---
 
 ## Context

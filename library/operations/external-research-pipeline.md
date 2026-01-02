@@ -3,6 +3,7 @@ title: "외부 리서치 → 작업 환경 연결 파이프라인"
 domain: operations
 created: 2026-01-02
 created_via: retro
+views: [gemify]
 sources:
   - inbox/thoughts/2025-12-31-import-command-needed.md
 ---

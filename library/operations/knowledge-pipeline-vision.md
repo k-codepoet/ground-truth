@@ -1,6 +1,7 @@
 ---
 title: "Knowledge Pipeline 비전과 구조"
 domain: operations
+views: [gemify]
 ---
 
 ## Context
