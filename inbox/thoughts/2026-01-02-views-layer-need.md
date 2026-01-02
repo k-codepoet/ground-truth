@@ -1,8 +1,8 @@
 ---
 title: "Views 레이어 필요성"
 date: 2026-01-02
-status: raw
-used_in:
+status: used
+used_in: drafts/views-layer.md
 references:
   - inbox/materials/2026-01-02-views-layer-discussion.md
 ---

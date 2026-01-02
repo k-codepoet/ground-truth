@@ -3,8 +3,8 @@ title: "Views Layer 아이디어 - 대화 기록"
 date: 2026-01-02
 source: "Claude 대화"
 type: conversation
-status: raw
-used_in:
+status: used
+used_in: drafts/views-layer.md
 ---
 
 # Views Layer 아이디어 - 대화 기록
