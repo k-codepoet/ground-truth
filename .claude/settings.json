@@ -11,5 +11,10 @@
         ]
       }
     ]
+  },
+  "permissions": {
+    "additionalDirectories": [
+      "/home/choigawoon/k-codepoet/my-claude-plugins"
+    ]
   }
 }
