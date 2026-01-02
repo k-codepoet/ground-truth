@@ -3,8 +3,8 @@ title: gemify 사후처리 기능 - 맥락과 배경
 date: 2026-01-02
 source: 대화에서 추출
 type: conversation
-status: raw
-used_in:
+status: used
+used_in: library/ai-automation/gemify-1.5.0-workflow-extensions.md
 ---
 
 ## 발단

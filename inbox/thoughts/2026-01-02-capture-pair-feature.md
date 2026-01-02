@@ -1,8 +1,8 @@
 ---
 title: "material + thought 쌍으로 캡처하는 기능"
 date: 2026-01-02
-status: raw
-used_in:
+status: used
+used_in: library/ai-automation/gemify-1.5.0-workflow-extensions.md
 references:
 ---
 
