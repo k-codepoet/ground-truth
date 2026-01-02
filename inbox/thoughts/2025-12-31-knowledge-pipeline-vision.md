@@ -2,8 +2,8 @@
 title: "Knowledge Pipeline 비전 총정리"
 date: 2025-12-31
 references: []
-status: raw
-used_in:
+status: used
+used_in: drafts/knowledge-pipeline-vision.md
 ---
 
 ## Part 1: 무엇을 만들려는가 (What)
