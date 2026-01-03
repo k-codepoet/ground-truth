@@ -4,7 +4,7 @@ created: 2026-01-03
 updated: 2026-01-03
 turns: 1
 revision: 1
-status: cutting
+status: set
 sources:
   - inbox/thoughts/2026-01-03-brand-naming-plugin-idea.md
   - inbox/materials/product-naming-branding-framework.md

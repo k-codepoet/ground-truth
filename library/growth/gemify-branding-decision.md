@@ -1,7 +1,7 @@
 ---
 title: "Gemify 브랜딩 의사결정"
 domain: growth
-views: [gemify]
+views: [gemify, namify]
 ---
 
 ## Context
