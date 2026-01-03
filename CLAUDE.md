@@ -29,7 +29,7 @@ Ground Truth는 개인 지식 파이프라인 시스템입니다. 머릿속 암�
 
 | 명령어 | 설명 |
 |--------|------|
-| `/gemify:capture-pair` | 대화에서 material + thought 쌍으로 동시 추출 |
+| `/gemify:sidebar` | 본 작업 중 떠오른 것을 material + thought 쌍으로 옆에 빼두기 |
 | `/gemify:retro` | 이미 완료된 작업을 역방향으로 library에 기록 |
 | `/gemify:improve-plugin [경로]` | 플러그인 개선 (add-dir 후 작업) |
 | `/gemify:setup [path]` | Gemify 구조 초기화 (`--examples` 옵션 가능) |
