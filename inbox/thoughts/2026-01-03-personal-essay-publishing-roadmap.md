@@ -3,7 +3,10 @@ title: 개인 에세이 발행 로드맵
 date: 2026-01-03
 status: raw
 used_in: null
-references: []
+references:
+  - inbox/materials/2026-01-03-presentation-topic-v1.md
+  - inbox/materials/2026-01-03-presentation-topic-v2.md
+  - inbox/materials/2026-01-03-presentation-full-history.md
 ---
 
 # 개인 에세이 발행 로드맵
