@@ -1,7 +1,6 @@
 ---
-title: Session Wrapup
+title: gemify wrapup 스킬 설계 세션
 date: 2026-01-03
-session: 001
 ---
 
 ## Summary
