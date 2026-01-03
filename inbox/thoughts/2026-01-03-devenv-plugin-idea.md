@@ -1,8 +1,8 @@
 ---
 title: turborepo + gitops 개발 도우미 플러그인 아이디어
 date: 2026-01-03
-status: raw
-used_in: null
+status: used
+used_in: drafts/devenv-plugin.md
 references: []
 ---
 
