@@ -62,6 +62,7 @@ Ground Truth는 개인 지식 파이프라인 시스템입니다. 머릿속 암�
 | `drafts/.history/{slug}/` | pivot 시 스냅샷 |
 | `library/{domain}/` | 완성된 지식 (domain별 분류) |
 | `views/by-subject/` | library를 주제별로 조합한 뷰 |
+| `views/.history/{subject}/` | view 변경 시 스냅샷 |
 
 ### Status 상태 흐름
 
@@ -95,7 +96,7 @@ inbox 파일 사용 시:
 | inbox/materials/ | `title`, `date`, `source`, `type` (article\|document\|conversation\|snippet\|other), `status`, `used_in` |
 | drafts/ | `title`, `created`, `updated`, `turns`, `revision`, `status` (cutting→set), `sources`, `history` |
 | library/ | `title`, `domain`, `views` (해당 문서가 포함된 view 목록 - 역참조) |
-| views/by-subject/ | `title`, `subject`, `updated`, `sources` (library 문서 경로 목록) |
+| views/by-subject/ | `title`, `subject`, `created`, `updated`, `revision`, `sources`, `history` |
 
 ## 파일 네이밍
 
