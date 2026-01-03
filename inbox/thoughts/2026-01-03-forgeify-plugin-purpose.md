@@ -3,8 +3,9 @@ title: "Forgeify - Claude Code 플러그인 개발의 메타 도구"
 date: 2026-01-03
 references:
   - library/ai-automation/forgify-plugin-review.md
-status: raw
+status: used
 used_in:
+  - drafts/forgify-plugin-review.md
 ---
 
 ## 핵심 아이디어

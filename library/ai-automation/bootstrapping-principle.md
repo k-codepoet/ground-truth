@@ -1,7 +1,8 @@
 ---
 title: 계단식 부트스트래핑 원칙
 domain: ai-automation
-views: []
+views:
+  - views/by-subject/forgeify.md
 ---
 
 ## 핵심 인사이트

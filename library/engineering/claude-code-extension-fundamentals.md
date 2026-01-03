@@ -1,7 +1,8 @@
 ---
 title: Claude Code 확장 개발 기초
 domain: engineering
-views: []
+views:
+  - views/by-subject/forgeify.md
 ---
 
 ## Context

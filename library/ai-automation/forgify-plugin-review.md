@@ -1,7 +1,8 @@
 ---
 title: Forgify 플러그인 검수 및 개선 가능성
 domain: ai-automation
-views: []
+views:
+  - views/by-subject/forgeify.md
 ---
 
 ## Context

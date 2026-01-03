@@ -11,7 +11,8 @@ requirements:
   - references/ 폴더 있으면 상세 내용 참조
 references: []
 domain: engineering
-views: []
+views:
+  - views/by-subject/forgeify.md
 ---
 
 ## Why

@@ -1,7 +1,8 @@
 ---
 title: gemify-forgeify 개선 문서 프로토콜
 domain: engineering
-views: []
+views:
+  - views/by-subject/forgeify.md
 ---
 
 ## 개요
