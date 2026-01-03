@@ -14,10 +14,11 @@ Forgify는 Claude Code 플러그인 개발을 AI에게 위임하는 도구다. �
 
 ### 플러그인 정체성
 
-**Forgify** = "Forge your ideas into Claude extensions"
+**Forgeify** = "Forge your ideas into Claude extensions"
 - **버전**: 1.3.0
 - **구성**: 7 Skills (지식) + 6 Commands (도구)
 - **목적**: Claude Code 확장 개발 가이드 (한국어)
+- **경로**: `plugins/forgeify/`
 
 ### 구조
 
@@ -57,7 +58,7 @@ Forgify는 Claude Code 플러그인 개발을 AI에게 위임하는 도구다. �
 | **Medium** | 검증 자동화 | 수동 호출만 | Hook 기반 실시간 피드백 |
 | **Medium** | 테스트 가이드 | 없음 | 로컬 설치, 디버그 모드 안내 |
 | **Low** | 예시 보강 | 개념만 있음 | references/ 폴더에 실제 예시 |
-| **Low** | 네이밍 통일 | 디렉토리≠plugin name | 디렉토리명도 forgeify로 |
+| ~~Low~~ | ~~네이밍 통일~~ | ~~디렉토리≠plugin name~~ | **완료**: `forgeify/`로 변경됨 |
 
 ### 핵심 인사이트
 
