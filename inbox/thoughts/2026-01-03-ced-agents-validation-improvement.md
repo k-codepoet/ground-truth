@@ -1,8 +1,8 @@
 ---
 title: "ced 플러그인 agents 검증 개선 필요"
 date: 2026-01-03
-status: raw
-used_in: null
+status: used
+used_in: drafts/ced-plugin-improvement.md
 references:
   - inbox/materials/2026-01-03-plugin-json-agents-validation-error.md
 ---

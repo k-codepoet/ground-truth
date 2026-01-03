@@ -3,8 +3,8 @@ title: "plugin.json agents 필드 검증 오류"
 date: 2026-01-03
 source: "terrafy 플러그인 개발 중 발생한 오류"
 type: document
-status: raw
-used_in: null
+status: used
+used_in: drafts/ced-plugin-improvement.md
 ---
 
 ## 오류 상황
