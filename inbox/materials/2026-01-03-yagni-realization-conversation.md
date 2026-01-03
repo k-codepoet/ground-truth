@@ -3,8 +3,8 @@ title: YAGNI 원칙 재확인 대화
 date: 2026-01-03
 source: 대화 중 깨달음
 type: conversation
-status: raw
-used_in: null
+status: used
+used_in: drafts/improve-plugin-yagni-check.md
 ---
 
 # 대화 맥락

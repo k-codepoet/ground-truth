@@ -1,8 +1,8 @@
 ---
 title: improve-plugin에 YAGNI 체크리스트 필요
 date: 2026-01-03
-status: raw
-used_in: null
+status: used
+used_in: drafts/improve-plugin-yagni-check.md
 references:
   - inbox/materials/2026-01-03-yagni-realization-conversation.md
 ---
