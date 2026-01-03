@@ -1,7 +1,7 @@
 ---
 title: Session Wrapup
 date: 2026-01-03
-session: 002
+slug: sidebar-rename
 ---
 
 ## Summary

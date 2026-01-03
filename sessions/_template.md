@@ -1,7 +1,7 @@
 ---
 title: Session Wrapup
 date: YYYY-MM-DD
-session: NNN
+slug: "{slug}"
 ---
 
 ## Summary
