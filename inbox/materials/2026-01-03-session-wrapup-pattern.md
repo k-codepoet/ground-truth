@@ -3,8 +3,8 @@ title: 세션 종료 시점 재확인 패턴
 date: 2026-01-03
 source: bootstrapping-principle draft 세션 마무리
 type: conversation
-status: raw
-used_in:
+status: used
+used_in: drafts/gemify-wrapup-skill.md
 ---
 
 ## 상황

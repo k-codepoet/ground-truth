@@ -1,8 +1,8 @@
 ---
 title: gemify 세션 종료 스킬 아이디어
 date: 2026-01-03
-status: raw
-used_in:
+status: used
+used_in: drafts/gemify-wrapup-skill.md
 references:
   - inbox/materials/2026-01-03-session-wrapup-pattern.md
 ---
