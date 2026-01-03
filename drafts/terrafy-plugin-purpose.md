@@ -1,10 +1,13 @@
 ---
 title: "Terrafy - -fy Trilogy의 WHERE 담당"
-date: 2026-01-03
-references:
-  - library/product/ify-trilogy-strategy.md
-status: used
-used_in: drafts/terrafy-plugin-purpose.md
+created: 2026-01-03
+updated: 2026-01-03
+turns: 0
+revision: 1
+status: set
+sources:
+  - inbox/thoughts/2026-01-03-terrafy-plugin-purpose.md
+history: []
 ---
 
 ## 핵심 아이디어
@@ -38,8 +41,16 @@ AI Company를 만들려면 세 가지가 필요:
 
 > "Lay the groundwork for your digital city"
 
-## 다음 단계
+---
 
-- 플러그인 README와 plugin.json 정보를 materials에 정리
-- `/gemify:draft`로 스펙 확장
-- view 생성하여 Trilogy 연결
+## Open Questions
+
+- [ ] Terrafy의 구체적인 기능 범위는?
+- [ ] 다른 두 플러그인(Gemify, Craftify)과의 연동 방식은?
+- [ ] 지원하는 인프라 타입 (K8s, Docker, VM 등)?
+
+## Facets to Explore
+
+- 실제 플러그인 구현 스펙
+- 사용자 워크플로우
+- 경쟁/대안 도구와의 차별점

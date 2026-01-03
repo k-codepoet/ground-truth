@@ -1,7 +1,7 @@
 ---
 title: -ify Trilogy 전략 (Gemify, Terrafy, Craftify)
 domain: product
-views: [craftify]
+views: [craftify, terrafy]
 ---
 
 ## Context
