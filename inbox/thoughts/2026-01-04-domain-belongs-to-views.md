@@ -1,8 +1,8 @@
 ---
 title: "6대 Domain은 library가 아니라 views 기준일 수 있다"
 date: 2026-01-04
-status: raw
-used_in: null
+status: used
+used_in: drafts/domain-classification-rethink.md
 references:
   - inbox/materials/2026-01-04-six-domain-mismatch.md
 ---

@@ -1,8 +1,8 @@
 ---
 title: domain 분류 기준 재정립 필요
 date: 2026-01-03
-status: raw
-used_in:
+status: used
+used_in: drafts/domain-classification-rethink.md
 references:
   - inbox/materials/2026-01-03-domain-classification-ambiguity.md
 ---
