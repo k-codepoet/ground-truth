@@ -4,6 +4,8 @@ subject: terrafy
 created: 2026-01-03
 updated: 2026-01-03
 revision: 1
+artifact: plugins/terrafy/
+artifact_type: plugin
 sources:
   - library/product/terrafy-plugin-spec.md
   - library/product/ify-trilogy-strategy.md

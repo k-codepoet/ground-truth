@@ -4,6 +4,8 @@ subject: forgeify
 created: 2026-01-03
 updated: 2026-01-03
 revision: 3
+artifact: plugins/forgeify/
+artifact_type: plugin
 sources:
   - library/engineering/claude-code-extension-fundamentals.md
   - library/ai-automation/forgify-plugin-review.md

@@ -2,6 +2,8 @@
 title: "Craftify Plugin 종합 View"
 subject: craftify
 updated: 2026-01-03
+artifact: plugins/craftify/
+artifact_type: plugin
 sources:
   - library/product/craftify-plugin-design.md
   - library/product/ify-trilogy-strategy.md

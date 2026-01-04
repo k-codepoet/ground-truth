@@ -2,6 +2,8 @@
 title: "Namify - 제품 네이밍 가이드"
 subject: namify
 updated: 2026-01-03
+artifact: plugins/namify/
+artifact_type: plugin
 sources:
   - library/product/namify-plugin-spec.md
   - library/growth/gemify-branding-decision.md

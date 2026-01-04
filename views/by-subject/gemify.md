@@ -2,6 +2,8 @@
 title: "Gemify Plugin 종합 View"
 subject: gemify
 updated: 2026-01-02
+artifact: plugins/gemify/
+artifact_type: plugin
 sources:
   - library/growth/gemify-branding-decision.md
   - library/operations/knowledge-pipeline-vision.md
