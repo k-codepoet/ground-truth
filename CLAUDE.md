@@ -49,7 +49,13 @@ library/        → 완성된 지식 (Type별 분류)
   ├── how-tos/      절차/방법
   ├── specs/        스펙/정의
   └── workflows/    워크플로우/프로세스
-views/          → 주제별 조합 (by-subject/, .history/)
+views/          → 서사가 있는 렌더링 (5가지 타입)
+  ├── by-subject/     문제 → 해결책 (서비스, workflow, plugin 등)
+  ├── by-talk/        발표/강연
+  ├── by-curriculum/  교육/커리큘럼
+  ├── by-portfolio/   포트폴리오/셀프 브랜딩
+  ├── by-essay/       에세이/수필
+  └── .history/       버전 히스토리
 sessions/       → 세션 리포트
 ```
 
@@ -71,6 +77,21 @@ sessions/       → 세션 리포트
 | original | 직접 생성한 지식 |
 | digested | 외부 자료를 소화해서 재구성 |
 | derived | 기존 문서에서 파생 |
+
+## Views 타입 시스템
+
+**핵심 개념**: library = 모델(재사용 가능한 원자 단위), views = 렌더링(서사가 있는 스토리텔링)
+
+| View 타입 | 목적 | 서사의 핵심 질문 | 렌즈/기준 |
+|-----------|------|-----------------|----------|
+| by-subject | 문제 → 해결책 | 어떤 문제를 어떻게 풀었는가? | 6대 domain |
+| by-talk | 메시지 전달 | 청중이 무엇을 깨닫고 가는가? | audience, takeaway |
+| by-curriculum | 가르침 | 학습자가 무엇을 할 수 있게 되는가? | audience, level, objective |
+| by-portfolio | 셀프 브랜딩 | 나는 어떤 사람인가? | role, strengths, evidence |
+| by-essay | 자기 성찰 | 나는 무엇을 믿고/느끼는가? | question, mood |
+
+**6대 Domain** (by-subject의 렌즈):
+- product, engineering, operations, growth, business, ai-automation
 
 ## Frontmatter 필수 필드
 
@@ -107,6 +128,43 @@ origin: original|digested|derived
 ```yaml
 subject: {주제명}
 artifact: {연결된 결과물 경로}
+domains: [product, engineering, operations, growth, business, ai-automation]  # 복수 가능
+sources: [library 문서 목록]
+```
+
+**views/by-talk/**
+```yaml
+title: "{발표 제목}"
+audience: "{청중}"
+takeaway: "{청중이 얻어갈 것}"
+duration: {시간}
+sources: [library 문서 목록]
+```
+
+**views/by-curriculum/**
+```yaml
+title: "{커리큘럼 제목}"
+audience: "{대상}"
+level: beginner|intermediate|advanced
+objective: "{학습 목표}"
+modules: [{title, sources}]
+sources: [library 문서 목록]
+```
+
+**views/by-portfolio/**
+```yaml
+title: "{포트폴리오 제목}"
+role: "{역할}"
+strengths: [강점 목록]
+evidence: [증명 목록]
+sources: [library 문서 목록]
+```
+
+**views/by-essay/**
+```yaml
+title: "{에세이 제목}"
+question: "{다루는 질문}"
+mood: "{톤/감정}"
 sources: [library 문서 목록]
 ```
 
