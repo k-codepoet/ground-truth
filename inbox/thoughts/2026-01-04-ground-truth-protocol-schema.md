@@ -1,8 +1,8 @@
 ---
 title: "ground-truth 공통 프로토콜/스키마 정의 필요"
 date: 2026-01-04
-status: raw
-used_in: null
+status: used
+used_in: drafts/ground-truth-protocol.md
 references:
   - inbox/materials/2026-01-04-tidy-triage-protocol-need.md
 ---

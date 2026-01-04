@@ -2,12 +2,13 @@
 title: "gemify:tidy 스킬 설계"
 created: 2026-01-03
 updated: 2026-01-03
-turns: 6
+turns: 8
 revision: 1
-status: cutting
+status: set
 sources:
   - inbox/thoughts/2026-01-03-gemify-tidy-command.md
   - inbox/thoughts/2026-01-02-inbox-triage-skill-idea.md
+  - library/operations/ground-truth-protocol.md
 history: []
 ---
 
@@ -56,27 +57,88 @@ inbox
 ## Open Questions
 
 - [x] 어떤 순서로 체크할 것인가? → **역순 (결과물 → views/library → drafts → inbox)**
-- [ ] 출력 포맷은?
+- [x] 출력 포맷은? → **하나씩 집중 (Option B)**
 - [x] 자동 수정 vs 리포트만? → **리포트 후 컨펌**
 - [x] 어느 범위까지? → **전체, 단 역순으로**
-- [ ] "실제 결과물"을 어떻게 식별할 것인가? → **스키마 정의 필요**
+- [x] "실제 결과물"을 어떻게 식별할 것인가? → **프로토콜 정의 완료**
 
-## 발견된 선행 작업
+## 프로토콜 (library/operations/ground-truth-protocol.md)
 
-tidy가 제대로 동작하려면:
+### 계층 구조
 
-### 1. 스키마/프로토콜 정의 (먼저)
-- library/views frontmatter에 `artifact` 필드 추가
-- 결과물 경로 명시 (예: `artifact: plugins/forgeify/`)
-- 컨벤션 규칙도 함께 정의
+```
+library/ ─────────── 재료 (개념의 밀도)
+   │                  - 재사용 가능
+   │                  - artifact 없음
+   │                  - 대기 상태 정상 (아직 안 쓰인 재료)
+   ▼
+views/ ──────────── 레시피 + 결과물 연결
+   │                  - sources: library 참조
+   │                  - artifact: 실제 경로
+   │                  - story: 왜/뭘/어디까지
+   ▼
+artifact ─────────── 현실 결과물
+                      - plugins/, infra/, docs/
+```
 
-### 2. 기존 문서 마이그레이션 (그 다음)
+### tidy 역할 (프로토콜 기반)
+
+**views ↔ artifact 일치 검사**:
+
+1. **artifact 존재 확인** - views에 명시된 경로에 실제 파일 있나?
+2. **수정 시점 비교** - 어느 쪽이 더 최신인가?
+3. **HITL 판단 요청** - 불일치 발견 시 사람에게 확인
+   - [A] artifact가 맞아 → views 업데이트 필요
+   - [B] views가 맞아 → artifact 수정 필요
+   - [C] 둘 다 반영할 부분 있음
+   - [D] 나중에 볼게
+
+**library 현황 보고**:
+- 사용 중: views.sources에 연결된 재료
+- 대기 중: 아직 안 쓰인 재료 (경고 아님, 현황)
+
+### source-of-truth 판단 원칙
+
+```
+의도적 변경: views가 먼저 (설계 → 구현)
+급한 수정: artifact가 먼저 (hotfix → 나중에 문서화)
+
+→ 수정 시점으로 추측 + HITL로 최종 판단
+→ 방향은 사람이 정함
+```
+
+## 남은 작업
+
+### 1. 기존 views 마이그레이션
+- artifact 필드 추가 (현재 5개 views)
 - 본문에 있는 경로 → frontmatter로 추출
-- 컨벤션 적용해서 누락된 연결 채우기
 
-### 3. tidy 본체 (마지막)
-- 정의된 스키마 기반으로 검증
-- 불일치/누락 리포트
+### 2. tidy 스킬 구현
+- 프로토콜 기반으로 검증 로직 작성
+- 출력 포맷: 하나씩 집중
+
+## 출력 포맷
+
+**하나씩 집중 방식**:
+
+```
+/gemify:tidy
+
+views/by-subject/forgeify.md ↔ plugins/forgeify/ 불일치 발견
+
+artifact가 더 최신입니다 (1시간 전 수정)
+view는 2일 전 업데이트
+
+[A] artifact 기준으로 view 업데이트
+[B] view 기준으로 artifact 수정 (별도 작업)
+[C] 둘 다 반영할 부분 있음 (수동)
+[D] 나중에 볼게
+```
+
+**장점**:
+- 점진적 tidy 철학과 일치
+- 한 번에 하나, 집중해서 판단
+- 컨텍스트 스위칭 최소화
 
 ## 접근법: 점진적 tidy
 

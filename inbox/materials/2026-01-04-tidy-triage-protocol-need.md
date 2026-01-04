@@ -3,8 +3,8 @@ title: "tidy/triage 공통 프로토콜 필요성 발견"
 date: 2026-01-04
 source: gemify:draft session
 type: conversation
-status: raw
-used_in: null
+status: used
+used_in: drafts/ground-truth-protocol.md
 ---
 
 # tidy/triage 공통 프로토콜 필요성 발견
