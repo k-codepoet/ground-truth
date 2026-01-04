@@ -1,13 +1,12 @@
 ---
-title: Tetritime - Craftify 위임 작업 문서
-status: set
-library: specs/tetritime-work-spec.md
-sources:
-  - inbox/thoughts/2026-01-03-yunseul-schedule-build-plan.md
-  - inbox/materials/2026-01-03-elementary-schedule-project.md
+title: Tetritime 작업 스펙
+type: spec
+origin: original
+created: 2026-01-04
+views: [tetritime]
 ---
 
-# Tetritime - Craftify 위임 작업 문서
+# Tetritime 작업 스펙
 
 > **태그라인**: "시간표를 테트리스처럼 맞춰요"
 
@@ -35,7 +34,7 @@ sources:
 
 ### Phase 1: 환경 셋업
 1. 대상 경로에 git init
-2. craftify boilerplate (spa/ssr 선택) 복제
+2. craftify boilerplate (ssr) 복제
 3. turborepo 구조 확인
 4. Cloudflare Pages 배포 설정
 
