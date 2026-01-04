@@ -77,3 +77,65 @@ views: []
 - 기존 draft 파일 마이그레이션
 - 다른 스킬/명령어 수정
 - UI/UX 변경
+
+## Implementation Result
+
+**Status: SUCCESS (with workaround)**
+
+**Date**: 2026-01-04
+
+### 발견된 버그
+
+Claude Code 플러그인에서 `type: "prompt"` 훅이 **silently ignore**됨.
+
+**GitHub Issue**: [#13155](https://github.com/anthropics/claude-code/issues/13155)
+
+**확인된 버전**: v2.0.75, v2.0.76
+
+### 적용된 Workaround
+
+`type: "command"`로 변경하고 셸 스크립트에서 JSON 출력:
+
+```bash
+# scripts/stop-hook.sh
+#!/usr/bin/env bash
+set -euo pipefail
+
+cat << 'EOF'
+{
+  "continue": true,
+  "systemMessage": "📝 [gemify] gemify:draft 작업을 했다면 히스토리 저장 필요 여부를 확인하세요."
+}
+EOF
+
+exit 0
+```
+
+```json
+// hooks/hooks.json
+{
+  "hooks": {
+    "Stop": [{
+      "hooks": [{
+        "type": "command",
+        "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/stop-hook.sh"
+      }]
+    }]
+  }
+}
+```
+
+### 테스트 결과
+
+대화형 모드에서 정상 동작 확인:
+```
+Stop says: 📝 [gemify] gemify:draft 작업을 했다면 히스토리 저장 필요 여부를 확인하세요. (turns >= 3, 내용 변경 시)
+```
+
+**참고**: `-p` (print) 모드에서는 Stop 훅이 실행되지 않음. 대화형 모드에서만 동작.
+
+### 한계
+
+- LLM 판단 로직은 스크립트에서 구현 불가 (원래 `type: "prompt"`의 장점)
+- 현재는 단순 안내 메시지만 표시
+- 향후 버그 수정 시 `type: "prompt"`로 전환 가능
