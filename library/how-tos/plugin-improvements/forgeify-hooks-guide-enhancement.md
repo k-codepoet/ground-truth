@@ -33,23 +33,32 @@ gemify, forgeify 등 플러그인에 구현한 hooks가 동작하지 않는 문�
 
 forgeify의 `SKILL.md` (hooks-guide)에 다음 내용 추가:
 
-**올바른 hooks.json 포맷**
+**올바른 hooks.json 포맷 (중첩 객체 구조)**
 ```json
 {
-  "hooks": [
-    {
-      "event": "PreToolUse",
-      "matcher": "Bash",
-      "command": ["./scripts/pre-bash.sh"]
-    }
-  ]
+  "description": "플러그인 훅 설명",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/pre-bash.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
 
 **주요 검증 포인트**
-- `event`: PreToolUse, PostToolUse, Stop 등 정확한 이벤트명
-- `matcher`: Tool 이름 대소문자 정확히 일치 (Bash, Read, Write 등)
-- `command`: 배열 형태, 실행 권한 확인
+- 이벤트 타입이 객체의 **키**로 사용됨 (PreToolUse, PostToolUse, Stop 등)
+- `matcher`: Tool 이름 대소문자 정확히 일치 (Bash, Read, Write 등) - 선택적
+- `hooks` 배열 내에 `type`과 `command` 필드 필수
+- `command`: 문자열 형태, 실행 권한 확인
 
 **디버깅 방법**
 ```bash
@@ -63,9 +72,12 @@ claude --debug  # 훅 로딩/실행 로그 확인
 
 - [ ] hooks/hooks.json 존재 여부
 - [ ] JSON 파싱 가능 여부
-- [ ] event 필드가 유효한 값인지
-- [ ] matcher가 실제 Tool 이름과 일치하는지
-- [ ] command 배열의 스크립트 파일 존재 및 실행 권한
+- [ ] `hooks` 필드가 객체 형태인지 (배열 아님)
+- [ ] 각 이벤트 키가 유효한 이벤트명인지
+- [ ] 각 이벤트 배열 내 객체에 `hooks` 배열이 있는지
+- [ ] 각 훅에 `type`과 `command` 필드가 있는지
+- [ ] matcher 사용 시 Tool 이름과 대소문자 일치하는지
+- [ ] command 스크립트 파일 존재 및 실행 권한
 
 ## Scope
 
