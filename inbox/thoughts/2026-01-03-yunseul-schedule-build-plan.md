@@ -3,6 +3,7 @@ title: 윤슬이시간표 앱 빌드/배포 환경 구축 계획
 date: 2026-01-03
 status: raw
 used_in: null
+deadline: 2026-01-31
 references:
   - inbox/materials/2026-01-03-elementary-schedule-project.md
 ---
