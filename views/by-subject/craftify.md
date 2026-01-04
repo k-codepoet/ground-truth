@@ -5,10 +5,10 @@ updated: 2026-01-04
 artifact: plugins/craftify/
 artifact_type: plugin
 sources:
-  - library/product/craftify-plugin-design.md
-  - library/product/ify-trilogy-strategy.md
-  - library/engineering/craftify-progressive-disclosure.md
-  - library/product/session-report-viewer-spec.md
+  - library/specs/craftify-plugin-design.md
+  - library/decisions/ify-trilogy-strategy.md
+  - library/how-tos/craftify-progressive-disclosure.md
+  - library/specs/session-report-viewer-spec.md
 ---
 
 # Craftify Plugin 종합 View
@@ -119,14 +119,14 @@ my-app/
 ## 관련 문서
 
 ### 설계/전략
-- [Craftify 플러그인 설계](../../library/product/craftify-plugin-design.md) - 전체 설계
-- [-ify Trilogy 전략](../../library/product/ify-trilogy-strategy.md) - Gemify, Terrafy, Craftify
+- [Craftify 플러그인 설계](../../library/specs/craftify-plugin-design.md) - 전체 설계
+- [-ify Trilogy 전략](../../library/decisions/ify-trilogy-strategy.md) - Gemify, Terrafy, Craftify
 
 ### 구현/기술
-- [Progressive Disclosure 패턴](../../library/engineering/craftify-progressive-disclosure.md) - 단계별 노출
+- [Progressive Disclosure 패턴](../../library/how-tos/craftify-progressive-disclosure.md) - 단계별 노출
 
 ### PoC 앱 스펙
-- [Session Report Viewer](../../library/product/session-report-viewer-spec.md) - craftify로 만들 첫 PoC 앱 ([view](./session-report-viewer.md))
+- [Session Report Viewer](../../library/specs/session-report-viewer-spec.md) - craftify로 만들 첫 PoC 앱 ([view](./session-report-viewer.md))
 
 ## 소스 경로 (구현 시 참고)
 

@@ -7,11 +7,11 @@ revision: 3
 artifact: plugins/forgeify/
 artifact_type: plugin
 sources:
-  - library/engineering/claude-code-extension-fundamentals.md
-  - library/ai-automation/forgify-plugin-review.md
-  - library/engineering/plugin-improvements/gemify-forgeify-protocol.md
-  - library/engineering/plugin-improvements/forgeify-improve-command.md
-  - library/ai-automation/bootstrapping-principle.md
+  - library/insights/claude-code-extension-fundamentals.md
+  - library/insights/forgify-plugin-review.md
+  - library/workflows/gemify-forgeify-protocol.md
+  - library/specs/forgeify-improve-command.md
+  - library/principles/bootstrapping-principle.md
 history:
   - revision: 2
     date: 2026-01-03
@@ -148,8 +148,7 @@ ground-truth (gemify)              마켓플레이스 (forgeify)
 /gemify:improve-plugin             /forgeify:improve-plugin <문서>
      ↓                                   ↓
 개선 문서 생성                      문서 참조 → 코드 수정
-library/engineering/
-  plugin-improvements/
+library/specs/
 ```
 
 **개선 문서 스키마 (Progressive Disclosure)**:
@@ -178,13 +177,13 @@ gemify (지식 생산)          forgeify (코드 실행)
 ## 계보 (Lineage)
 
 ```
-engineering (시초)
+insights (시초)
   └─ claude-code-extension-fundamentals.md
         ↓ AI에게 위임
-ai-automation (현재)
+insights (현재)
   └─ forgify-plugin-review.md
         ↓ 프로토콜 확립
-engineering/plugin-improvements (v1.4.0)
+workflows + specs (v1.4.0)
   ├─ gemify-forgeify-protocol.md
   └─ forgeify-improve-command.md
 ```
@@ -192,18 +191,18 @@ engineering/plugin-improvements (v1.4.0)
 ## 관련 문서
 
 ### 기초/시초
-- [Claude Code 확장 개발 기초](../../library/engineering/claude-code-extension-fundamentals.md) - 플러그인 개발 기본 구조
+- [Claude Code 확장 개발 기초](../../library/insights/claude-code-extension-fundamentals.md) - 플러그인 개발 기본 구조
 
 ### 검토/개선
-- [Forgify 플러그인 검수 및 개선 가능성](../../library/ai-automation/forgify-plugin-review.md) - 강점과 개선점 분석
+- [Forgify 플러그인 검수 및 개선 가능성](../../library/insights/forgify-plugin-review.md) - 강점과 개선점 분석
 
 ### v1.4.0 프로토콜
-- [gemify-forgeify 개선 문서 프로토콜](../../library/engineering/plugin-improvements/gemify-forgeify-protocol.md) - 단방향 흐름 설계
-- [forgeify-improve-command 개선 문서](../../library/engineering/plugin-improvements/forgeify-improve-command.md) - improve-plugin 구현 스펙
+- [gemify-forgeify 개선 문서 프로토콜](../../library/workflows/gemify-forgeify-protocol.md) - 단방향 흐름 설계
+- [forgeify-improve-command 개선 문서](../../library/specs/forgeify-improve-command.md) - improve-plugin 구현 스펙
 
 ### 원칙
-- [계단식 부트스트래핑 원칙](../../library/ai-automation/bootstrapping-principle.md) - gemify ↔ forgeify 순환 구조
+- [계단식 부트스트래핑 원칙](../../library/principles/bootstrapping-principle.md) - gemify ↔ forgeify 순환 구조
 
 ### 연관 패턴
-- [improve-plugin-workflow](../../library/ai-automation/improve-plugin-workflow.md) - 플러그인 개선 워크플로우
-- [ced-plugin-agents-marketplace-fix](../../library/engineering/ced-plugin-agents-marketplace-fix.md) - agents 검증 자동화
+- [improve-plugin-workflow](../../library/workflows/improve-plugin-workflow.md) - 플러그인 개선 워크플로우
+- [ced-plugin-agents-marketplace-fix](../../library/specs/ced-plugin-agents-marketplace-fix.md) - agents 검증 자동화

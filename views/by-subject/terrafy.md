@@ -7,8 +7,8 @@ revision: 1
 artifact: plugins/terrafy/
 artifact_type: plugin
 sources:
-  - library/product/terrafy-plugin-spec.md
-  - library/product/ify-trilogy-strategy.md
+  - library/specs/terrafy-plugin-spec.md
+  - library/decisions/ify-trilogy-strategy.md
 history: []
 ---
 
@@ -137,8 +137,8 @@ history: []
 ## 관련 문서
 
 ### 설계/전략
-- [Terrafy 플러그인 스펙](../../library/product/terrafy-plugin-spec.md) - 상세 스펙
-- [-ify Trilogy 전략](../../library/product/ify-trilogy-strategy.md) - Gemify, Terrafy, Craftify
+- [Terrafy 플러그인 스펙](../../library/specs/terrafy-plugin-spec.md) - 상세 스펙
+- [-ify Trilogy 전략](../../library/decisions/ify-trilogy-strategy.md) - Gemify, Terrafy, Craftify
 
 ### 관련 플러그인
 - [Craftify View](./craftify.md) - HOW 담당 (후속 단계)

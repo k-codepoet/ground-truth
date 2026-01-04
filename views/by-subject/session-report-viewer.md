@@ -6,7 +6,7 @@ updated: 2026-01-04
 artifact: null
 artifact_type: webapp
 sources:
-  - library/product/session-report-viewer-spec.md
+  - library/specs/session-report-viewer-spec.md
 ---
 
 # Session Report Viewer 종합 View
@@ -106,7 +106,7 @@ gemify:wrapup으로 생성된 세션 리포트(`sessions/`)가 마크다운으�
 ## 관련 문서
 
 ### 스펙
-- [Session Report Viewer 스펙](../../library/product/session-report-viewer-spec.md) - 상세 스펙
+- [Session Report Viewer 스펙](../../library/specs/session-report-viewer-spec.md) - 상세 스펙
 
 ### 구현 도구
 - [Craftify Plugin View](./craftify.md) - 이 앱을 만들 도구

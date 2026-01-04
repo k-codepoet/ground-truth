@@ -1,9 +1,11 @@
 ---
 title: "Library 마이그레이션 작업 계획"
-status: cutting
+status: set
 sources:
   - drafts/domain-classification-rethink.md
-history: []
+history:
+  - date: 2026-01-04
+    changes: 마이그레이션 완료 - 38개 파일을 Type 기반 구조로 재구성
 ---
 
 # Library 마이그레이션 작업 계획
@@ -105,13 +107,13 @@ views: []
 
 ## 작업 순서
 
-1. [ ] 새 폴더 생성 (`principles/`, `decisions/`, `insights/`, `how-tos/`, `specs/`, `workflows/`)
-2. [ ] 파일별 마이그레이션 (위 테이블 순서대로)
+1. [x] 새 폴더 생성 (`principles/`, `decisions/`, `insights/`, `how-tos/`, `specs/`, `workflows/`)
+2. [x] 파일별 마이그레이션 (위 테이블 순서대로)
    - 파일 이동
    - frontmatter 수정 (domain → type + origin)
-3. [ ] 기존 domain 폴더 삭제
-4. [ ] CLAUDE.md 업데이트
-5. [ ] ground-truth-protocol.md 업데이트
+3. [x] 기존 domain 폴더 삭제
+4. [x] CLAUDE.md 업데이트
+5. [x] views 경로 수정 (6개 view 파일)
 
 ---
 

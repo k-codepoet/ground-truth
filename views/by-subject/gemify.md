@@ -5,14 +5,15 @@ updated: 2026-01-02
 artifact: plugins/gemify/
 artifact_type: plugin
 sources:
-  - library/growth/gemify-branding-decision.md
-  - library/operations/knowledge-pipeline-vision.md
-  - library/operations/draft-facet-polish-mode.md
-  - library/operations/external-research-pipeline.md
-  - library/ai-automation/gemify-1.5.0-workflow-extensions.md
-  - library/ai-automation/improve-plugin-workflow.md
-  - library/ai-automation/claude-code-env-context.md
-  - library/ai-automation/execution-first-principle.md
+  - library/decisions/gemify-branding-decision.md
+  - library/specs/knowledge-pipeline-vision.md
+  - library/specs/ai-company-automation-roadmap.md
+  - library/how-tos/draft-facet-polish-mode.md
+  - library/workflows/external-research-pipeline.md
+  - library/specs/gemify-1.5.0-workflow-extensions.md
+  - library/workflows/improve-plugin-workflow.md
+  - library/insights/claude-code-env-context.md
+  - library/principles/execution-first-principle.md
 ---
 
 # Gemify Plugin 종합 View
@@ -33,13 +34,13 @@ sources:
     └─────────────┘    └─────────────┘    └─────────────┘
          │                   │                   │
     ┌────┴────┐         ┌────┴────┐         ┌────┴────┐
-    │thoughts/│         │ facet   │         │ 6 domain│
+    │thoughts/│         │ facet   │         │ Type별  │
     │materials│         │ polish  │         │ 분류    │
     └─────────┘         └─────────┘         └─────────┘
 
     확장 워크플로우:
     ┌─────────────────────────────────────────────────────────────┐
-    │  /capture-pair    material + thought 동시 생성              │
+    │  /sidebar         material + thought 동시 생성              │
     │  /retro           구현 완료 후 역방향 → library 직행        │
     │  /improve-plugin  add-dir로 세션 한정 플러그인 개선         │
     └─────────────────────────────────────────────────────────────┘
@@ -66,10 +67,10 @@ sources:
 - `/gemify:inbox` - 생각 포착
 - `/gemify:import` - 외부 재료 가져오기 (Perplexity 등에서)
 - `/gemify:draft` - facet(넓게)/polish(깊이) 모드로 다듬기
-- `/gemify:library` - domain별 분류 저장
+- `/gemify:library` - type별 분류 저장
 
 **v1.5.0 확장**:
-- `/gemify:capture-pair` - material + thought 동시 생성
+- `/gemify:sidebar` - material + thought 동시 생성
 - `/gemify:retro` - 사후처리 (구현 완료 후 역방향 기록)
 - `/gemify:improve-plugin` - 세션 한정 플러그인 개선
 
@@ -91,15 +92,15 @@ Stage 3: AI 자율        (예정)
 ## 관련 문서
 
 ### 브랜딩/비전
-- [Gemify 브랜딩 의사결정](../../library/growth/gemify-branding-decision.md) - 네이밍, 메타포, 태그라인
-- [Knowledge Pipeline 비전](../../library/operations/knowledge-pipeline-vision.md) - 전체 시스템 구조
+- [Gemify 브랜딩 의사결정](../../library/decisions/gemify-branding-decision.md) - 네이밍, 메타포, 태그라인
+- [Knowledge Pipeline 비전](../../library/specs/knowledge-pipeline-vision.md) - 전체 시스템 구조
 
 ### 기능/워크플로우
-- [facet/polish 모드](../../library/operations/draft-facet-polish-mode.md) - draft 대화 모드
-- [외부 리서치 파이프라인](../../library/operations/external-research-pipeline.md) - import 배경
-- [1.5.0 워크플로우 확장](../../library/ai-automation/gemify-1.5.0-workflow-extensions.md) - capture-pair, retro
+- [facet/polish 모드](../../library/how-tos/draft-facet-polish-mode.md) - draft 대화 모드
+- [외부 리서치 파이프라인](../../library/workflows/external-research-pipeline.md) - import 배경
+- [1.5.0 워크플로우 확장](../../library/specs/gemify-1.5.0-workflow-extensions.md) - capture-pair, retro
 
 ### 구현/기술
-- [플러그인 개선 워크플로우](../../library/ai-automation/improve-plugin-workflow.md) - add-dir 패턴
-- [Claude Code 환경 컨텍스트](../../library/ai-automation/claude-code-env-context.md) - env 정보 활용
-- [실행 우선 원칙](../../library/ai-automation/execution-first-principle.md) - 개발 철학
+- [플러그인 개선 워크플로우](../../library/workflows/improve-plugin-workflow.md) - add-dir 패턴
+- [Claude Code 환경 컨텍스트](../../library/insights/claude-code-env-context.md) - env 정보 활용
+- [실행 우선 원칙](../../library/principles/execution-first-principle.md) - 개발 철학

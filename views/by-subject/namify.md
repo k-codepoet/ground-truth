@@ -5,8 +5,8 @@ updated: 2026-01-03
 artifact: plugins/namify/
 artifact_type: plugin
 sources:
-  - library/product/namify-plugin-spec.md
-  - library/growth/gemify-branding-decision.md
+  - library/specs/namify-plugin-spec.md
+  - library/decisions/gemify-branding-decision.md
 ---
 
 # Namify - 제품 네이밍 가이드
@@ -102,6 +102,6 @@ sources:
 
 ## 관련 문서
 
-- [Namify Plugin 스펙](../../library/product/namify-plugin-spec.md) - 상세 스펙
-- [Gemify 브랜딩 의사결정](../../library/growth/gemify-branding-decision.md) - 실제 사례
+- [Namify Plugin 스펙](../../library/specs/namify-plugin-spec.md) - 상세 스펙
+- [Gemify 브랜딩 의사결정](../../library/decisions/gemify-branding-decision.md) - 실제 사례
 - [제품 네이밍 프레임워크](../../inbox/materials/product-naming-branding-framework.md) - 원본 프레임워크
