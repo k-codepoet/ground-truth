@@ -1,8 +1,8 @@
 ---
 title: "Inbox 트리아지 스킬/커맨드 아이디어"
 date: 2026-01-02
-status: raw
-used_in: null
+status: used
+used_in: drafts/gemify-tidy.md
 references:
   - inbox/materials/2026-01-02-inbox-priority-analysis-session.md
 ---

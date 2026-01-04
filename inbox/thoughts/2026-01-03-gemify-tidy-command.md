@@ -1,8 +1,8 @@
 ---
 title: "gemify:tidy 명령어 필요성"
 date: 2026-01-03
-status: raw
-used_in: null
+status: used
+used_in: drafts/gemify-tidy.md
 references: []
 ---
 
