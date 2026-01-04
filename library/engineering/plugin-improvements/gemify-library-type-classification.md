@@ -48,8 +48,13 @@ library/
 ├── decisions/     # 의사결정 기록 (ADR)
 ├── insights/      # 발견, 깨달음
 ├── how-tos/       # 방법론, 절차
-└── specs/         # 명세, 스펙
+├── specs/         # 명세, 스펙
+└── workflows/     # input→output 패턴이 명확한 작업 흐름
 ```
+
+**workflows vs how-tos:**
+- **how-to**: 단일 작업의 방법론/절차
+- **workflow**: 여러 단계/도구를 연결한 파이프라인 (예: gemify→forgeify, gemify→craftify)
 
 ### 2. frontmatter 스키마 변경
 
@@ -61,7 +66,7 @@ views: []
 
 # After
 title: "Bootstrapping 원칙"
-type: principle       # principle | decision | insight | how-to | spec
+type: principle       # principle | decision | insight | how-to | spec | workflow
 origin: original      # original | digested | derived
 views: []
 ```
