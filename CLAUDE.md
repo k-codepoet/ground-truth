@@ -41,11 +41,67 @@ Ground Truth는 개인 지식 파이프라인 시스템입니다. 머릿속 암�
 
 ```
 inbox/          → 원석 (thoughts/, materials/)
-drafts/         → 다듬는 중
-library/        → 완성된 재료 (6대 domain별 분류)
-views/          → 레시피 + 결과물 연결
+drafts/         → 다듬는 중 (status: cutting → set)
+library/        → 완성된 지식 (6대 domain별 분류)
+views/          → 주제별 조합 (by-subject/, .history/)
 sessions/       → 세션 리포트
 ```
+
+## 6대 Domain
+
+| Domain | 핵심 질문 |
+|--------|----------|
+| product | 무엇을 만들 것인가? |
+| engineering | 어떻게 만들 것인가? |
+| operations | 어떻게 돌릴 것인가? |
+| growth | 어떻게 알릴 것인가? |
+| business | 어떻게 유지할 것인가? |
+| ai-automation | 어떻게 위임할 것인가? |
+
+## Frontmatter 필수 필드
+
+**inbox/thoughts/**
+```yaml
+title: "{제목}"
+date: YYYY-MM-DD
+status: raw
+```
+
+**inbox/materials/**
+```yaml
+title: "{제목}"
+date: YYYY-MM-DD
+source: "(URL, 대화, 문서 등)"
+type: article|document|conversation|snippet|other
+status: raw
+```
+
+**drafts/**
+```yaml
+title: "{제목}"
+status: cutting|set    # cutting: 진행 중, set: 완료
+```
+
+**library/**
+```yaml
+title: "{제목}"
+domain: {6대 domain 중 하나}
+```
+
+**views/by-subject/**
+```yaml
+subject: {주제명}
+artifact: {연결된 결과물 경로}
+sources: [library 문서 목록]
+```
+
+## 파일명 규칙
+
+- **thoughts/materials**: `YYYY-MM-DD-{slug}.md`
+- **drafts**: `{slug}.md`
+- **library**: `{slug}.md`
+- **views**: `{subject}.md`
+- **sessions**: `YYYY-MM-DD-{slug}.md`
 
 ## 핵심 규칙
 
