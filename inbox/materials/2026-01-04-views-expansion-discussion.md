@@ -3,8 +3,9 @@ title: "Views 확장 필요성 논의"
 date: 2026-01-04
 source: "gemify:draft 세션 - library 분류 체계 리팩토링"
 type: conversation
-status: raw
-used_in: null
+status: processed
+used_in:
+  - library/specs/gemify-views-type-system.md
 ---
 
 # Views 확장 필요성 논의

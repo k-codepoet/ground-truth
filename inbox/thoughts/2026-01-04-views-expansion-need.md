@@ -1,8 +1,10 @@
 ---
 title: "Views는 by-subject만이 아니다"
 date: 2026-01-04
-status: raw
-used_in: null
+status: processed
+used_in:
+  - library/specs/gemify-views-type-system.md
+  - library/specs/gemify-view-skill-expansion.md
 references:
   - inbox/materials/2026-01-04-views-expansion-discussion.md
 ---
