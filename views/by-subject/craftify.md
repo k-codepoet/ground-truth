@@ -1,13 +1,14 @@
 ---
 title: "Craftify Plugin 종합 View"
 subject: craftify
-updated: 2026-01-03
+updated: 2026-01-04
 artifact: plugins/craftify/
 artifact_type: plugin
 sources:
   - library/product/craftify-plugin-design.md
   - library/product/ify-trilogy-strategy.md
   - library/engineering/craftify-progressive-disclosure.md
+  - library/product/session-report-viewer-spec.md
 ---
 
 # Craftify Plugin 종합 View
@@ -103,6 +104,7 @@ my-app/
 [x] 컨셉 정의           ✅ 완료
 [x] 플러그인 구조 설계   ✅ 완료
 [ ] 첫 마일스톤 구현     ← 다음 작업
+[ ] Session Report Viewer PoC
 [ ] slack-app 확장
 [ ] discord-app 확장
 [ ] Docker/k3s 경로 추가
@@ -122,6 +124,9 @@ my-app/
 
 ### 구현/기술
 - [Progressive Disclosure 패턴](../../library/engineering/craftify-progressive-disclosure.md) - 단계별 노출
+
+### PoC 앱 스펙
+- [Session Report Viewer](../../library/product/session-report-viewer-spec.md) - craftify로 만들 첫 PoC 앱 ([view](./session-report-viewer.md))
 
 ## 소스 경로 (구현 시 참고)
 
